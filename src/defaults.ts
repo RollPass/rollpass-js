@@ -1,4 +1,4 @@
-import {ApiOptions} from "./ApiController";
+import {ApiOptions} from "./protected/ApiController";
 
 /**
  * @ignore

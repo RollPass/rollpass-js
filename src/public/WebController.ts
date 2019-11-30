@@ -1,7 +1,10 @@
-import {ApiOptions} from "./ApiController";
+import {ApiOptions} from "../protected/ApiController";
 import {ClientController, ClientOptions} from "./ClientController";
 import {parse} from "qs";
 
+/**
+ * @category State
+ */
 export enum AuthenticationState {
   UNAUTHENTICATED = "UNAUTHENTICATED",
   SESSION_EXPIRED = "SESSION_EXPIRED",

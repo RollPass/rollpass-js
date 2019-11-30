@@ -4,11 +4,24 @@
 
 ## Index
 
-### External modules
+### State Enumerations
 
-* ["AgentController"](modules/_agentcontroller_.md)
-* ["ApiController"](modules/_apicontroller_.md)
-* ["ClientController"](modules/_clientcontroller_.md)
-* ["WebController"](modules/_webcontroller_.md)
-* ["defaults"](modules/_defaults_.md)
-* ["index"](modules/_index_.md)
+* [AuthenticationState](enums/authenticationstate.md)
+
+### Browser Classes
+
+* [WebController](classes/webcontroller.md)
+
+### Backend Classes
+
+* [SecretController](classes/secretcontroller.md)
+
+### Isomorphic Classes
+
+* [ClientController](classes/clientcontroller.md)
+
+### Interfaces
+
+* [ApiOptions](interfaces/apioptions.md)
+* [ClientOptions](interfaces/clientoptions.md)
+* [IStorage](interfaces/istorage.md)

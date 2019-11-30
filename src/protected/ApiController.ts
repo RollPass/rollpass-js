@@ -1,5 +1,5 @@
 import axios, {AxiosInstance, Method} from "axios";
-import {defaultApiOptions} from "./defaults";
+import {defaultApiOptions} from "../defaults";
 
 export interface ApiOptions {
   baseURL: string;
@@ -35,6 +35,9 @@ export abstract class ApiController {
   }
 }
 
+/**
+ * @ignore
+ */
 function getAxios(apiOptions: ApiOptions): AxiosInstance {
   return axios.create({
     baseURL: apiOptions.baseURL,

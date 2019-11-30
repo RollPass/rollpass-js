@@ -1,6 +1,6 @@
 import mockAxios from 'jest-mock-axios';
-import {ApiController, ApiOptions} from "../src/ApiController";
-import {defaultApiOptions} from "../src/defaults"
+import {ApiController, ApiOptions} from "../../src/protected/ApiController";
+import {defaultApiOptions} from "../../src/defaults"
 import {Method} from "axios";
 
 // a dummy api controller facade for inspecting during tests

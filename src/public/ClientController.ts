@@ -1,14 +1,14 @@
-/**
- * ClientController
- * @category Isomorphic
- */
-import {ApiController, ApiOptions} from "./ApiController";
+import {ApiController, ApiOptions} from "../protected/ApiController";
 
 export interface ClientOptions {
   clientToken: string;
   projectId: string;
 }
 
+/**
+ * ClientController
+ * @category Isomorphic
+ */
 export class ClientController extends ApiController {
   private readonly clientOptions: ClientOptions;
 
