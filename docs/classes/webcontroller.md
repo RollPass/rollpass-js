@@ -57,9 +57,16 @@ Name | Type | Default |
 
 ▸ **getAuthenticationState**(`currentUrl`: string): *Promise‹[AuthenticationState](../enums/authenticationstate.md)›*
 
-Defined in public/WebController.ts:55
+Defined in public/WebController.ts:63
 
-Get the current authentication state. Use the authentication state to determine your next action
+Get the current authentication state. Use the authentication state to determine your next action.
+
+Method first checks the current url for the presence of a challenge code. If that is found
+the challenge is verified and a session is created in localStorage. Authentication state returned in this case is `AUTHENTICATED`.
+
+If no code is present the method checks for a session in localStorage and tries to validate the session. If the session is still valid then `AUTHENTICATED` is returned. If not `SESSION_EXPIRED` is returned.
+
+If no code or session is found `UNAUTHENTICATED` is returned. In this case you should prompt the user to enter their email address and use it to send a challenge with `sendChallenge(emailAddress).
 
 **Parameters:**
 
@@ -75,7 +82,7 @@ ___
 
 ▸ **getSessionCode**(): *any*
 
-Defined in public/WebController.ts:83
+Defined in public/WebController.ts:91
 
 **Returns:** *any*
 
@@ -85,7 +92,7 @@ ___
 
 ▸ **getUser**(): *Promise‹any›*
 
-Defined in public/WebController.ts:95
+Defined in public/WebController.ts:103
 
 **Returns:** *Promise‹any›*
 
@@ -95,7 +102,7 @@ ___
 
 ▸ **sendChallenge**(`emailAddress`: string): *Promise‹any›*
 
-Defined in public/WebController.ts:91
+Defined in public/WebController.ts:99
 
 **Parameters:**
 
@@ -111,6 +118,6 @@ ___
 
 ▸ **signOut**(): *void*
 
-Defined in public/WebController.ts:87
+Defined in public/WebController.ts:95
 
 **Returns:** *void*
