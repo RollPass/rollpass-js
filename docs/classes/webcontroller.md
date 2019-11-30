@@ -62,11 +62,11 @@ Defined in public/WebController.ts:63
 Get the current authentication state. Use the authentication state to determine your next action.
 
 Method first checks the current url for the presence of a challenge code. If that is found
-the challenge is verified and a session is created in localStorage. Authentication state returned in this case is `AUTHENTICATED`.
+the challenge is verified and a session is created in localStorage. Authentication state returned in this case is `AUTHENTICATED`. You can then use the `getUser()` and user datastore methods safely.
 
 If no code is present the method checks for a session in localStorage and tries to validate the session. If the session is still valid then `AUTHENTICATED` is returned. If not `SESSION_EXPIRED` is returned.
 
-If no code or session is found `UNAUTHENTICATED` is returned. In this case you should prompt the user to enter their email address and use it to send a challenge with `sendChallenge(emailAddress).
+If no code or session is found `UNAUTHENTICATED` is returned. In this case (or when `SESSION_EXPIRED`) you should prompt the user to enter their email address and use it to send a challenge with `sendChallenge(emailAddress)`.
 
 **Parameters:**
 
