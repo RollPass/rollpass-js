@@ -9,7 +9,7 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "docs": "typedoc --mode modules --plugin typedoc-plugin-markdown --readme none --out docs --excludeProtected --excludePrivate ./src",
+    "docs": "typedoc --plugin typedoc-plugin-markdown --readme none --out docs --excludeProtected --excludePrivate ./src",
     "test": "jest",
     "tdd": "jest --watch"
   },
