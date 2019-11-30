@@ -9,7 +9,21 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "docs": "typedoc --mode modules --plugin typedoc-plugin-markdown --readme none --out docs --excludeProtected --excludePrivate ./src"
+    "docs": "typedoc --mode modules --plugin typedoc-plugin-markdown --readme none --out docs --excludeProtected --excludePrivate ./src",
+    "test": "jest",
+    "tdd": "jest --watch"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -19,6 +33,10 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "jest-mock-axios": "^3.1.2",
+    "ts-jest": "^24.2.0",
     "typedoc": "^0.15.3",
     "typedoc-plugin-markdown": "^2.2.11",
     "typescript": "^3.3.3"
