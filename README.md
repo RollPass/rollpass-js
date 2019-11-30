@@ -1,4 +1,4 @@
 # RollPass JS
 
 ### Documentation
-See [./docs/README.md]
+See [full method documentation](./docs/README.md)
