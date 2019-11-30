@@ -1,4 +1,4 @@
-[rollpass-js](../README.md) › ["index"](../modules/_index_.md) › [IStorage](_index_.istorage.md)
+[rollpass-js](../README.md) › ["WebController"](../modules/_webcontroller_.md) › [IStorage](_webcontroller_.istorage.md)
 
 # Interface: IStorage
 
@@ -10,9 +10,9 @@
 
 ### Methods
 
-* [getItem](_index_.istorage.md#getitem)
-* [removeItem](_index_.istorage.md#removeitem)
-* [setItem](_index_.istorage.md#setitem)
+* [getItem](_webcontroller_.istorage.md#getitem)
+* [removeItem](_webcontroller_.istorage.md#removeitem)
+* [setItem](_webcontroller_.istorage.md#setitem)
 
 ## Methods
 
@@ -20,7 +20,7 @@
 
 ▸ **getItem**(`key`: string): *any*
 
-Defined in index.ts:202
+Defined in WebController.ts:12
 
 **Parameters:**
 
@@ -36,7 +36,7 @@ ___
 
 ▸ **removeItem**(`key`: string): *void*
 
-Defined in index.ts:203
+Defined in WebController.ts:13
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **setItem**(`key`: string, `value`: any): *void*
 
-Defined in index.ts:204
+Defined in WebController.ts:14
 
 **Parameters:**
 
