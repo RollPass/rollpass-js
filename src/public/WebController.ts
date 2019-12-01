@@ -12,6 +12,7 @@ export enum AuthenticationState {
 }
 
 export enum ErrorCode {
+  UNINITIALIZED_CLIENT = "UNINITIALIZED_CLIENT",
   /**
    * No session was found locally. This could mean that you haven't authenticated the user yet.
    * You should call `getAuthenticationState` once at application load to get a local session before calling session dependent methods.
@@ -22,8 +23,9 @@ export enum ErrorCode {
 /**
  * @ignore
  */
-enum ErrorMessage {
-  NO_STORED_SESSION = "No local session found. See https://rollpass.io/docs/enums/errorcode#NO_STORED_SESSION for more information."
+export enum ErrorMessage {
+  UNINITIALIZED_CLIENT = "RollPass was not initialized. See https://rollpass.io/docs/js/enums/errorcode#UNINITIALIZED_CLIENT for more information.",
+  NO_STORED_SESSION = "No local session found. See https://rollpass.io/docs/js/enums/errorcode#NO_STORED_SESSION for more information."
 }
 
 interface IStorage {
@@ -34,7 +36,7 @@ interface IStorage {
   setItem(key: string, value: any): void;
 }
 
-class WebControllerException extends Error {
+export class WebException extends Error {
   constructor(name: ErrorCode, message: string) {
     super();
     this.name = name;
@@ -42,53 +44,6 @@ class WebControllerException extends Error {
   }
 }
 
-/**
- * For use with client-side applications that interact with RollPass.
- *
- * ## How it works
- * The WebController is very simple. You don't need to know whether a user is logged in or not you simply assume a user if present and try to access them using `getUser()`. This method will throw when an authenticated session can not be found or a session has expired. This normal and handle the exception is part of the auth flow.
- *
- * ![Flow diagram](../assets/uml/webcontroller.puml.png)
- *
- * If `getUser()` succeeds you will be returned a user object and a session will be stored locally. If `getUser()` throws it is likely because a session has naturally expired or the current user is anonymous or visiting your page for the first time. In these cases simply prompt the user to enter their email address and then send them an access link using `webController.sendChallenge(emailAddress)`.
- *
- * Once an unathenticated or new user receives an email access link via `sendChallenge` they will click on it and load the `redirectUrl` you specified for this project. The same `getUser()` call will now succeed by extracting a challenge verification code from the redirect url. A session will be stored locally and is usually valid for 1 hour. You should still handle all `getUser` exceptions with a `try/catch` or `Promise.catch` as the session will eventually expire and you will need to send another challenge email. If a 1 hour session time is not long enough you can increase it in your [project settings dashboard](https://rollpass.io/dashboard).
- *
- * ## Install
- *
- * To use RollPass create a new WebController instance in your application using the [clientToken](https://rollpass.io/dashboard) and [projectId](https://rollpass.io/dashboard) found in your [dashboard](https://rollpass.io/dashboard).
- *
- * ### For browser environments
- * You can include RollPass in HTML projects using the CDN script href.
- *
- * ```html
- * <script href="https://cdn.rollpass.io/rollpass-js/latest.min.js"></script>
- * ```
- *
- * Then in a script tag access the WebController like so:
- * ```html
- * <script type="javascript">
- * const webController = new RollPass.WebController({
- *   clientToken: 'xxxx';
- *   projectId: 'xxxx';
- * });
- * </script>
- * ```
- * ### Node environments
- *
- * `npm install --save rollpass-js`
- *
- *
- * ```typescript
- * import { WebController } from "rollpass-js";
- *
- * const webController = new WebController({
- *   clientToken: 'xxxx';
- *   projectId: 'xxxx';
- * });
- * ```
- * @category Browser
- */
 export class WebController {
   private readonly sessionKey = "__rollpass_session_id__";
   private readonly storage: IStorage;
@@ -103,15 +58,6 @@ export class WebController {
     this.clientController = new ClientController(clientOptions, apiOptions)
   }
 
-  /**
-   * try {
-   *   const user = await webController.getUser()
-   * } catch (e) {
-   *   // prompt user to enter email address for access code
-   *   // then user `webController.sendChallenge(emailAddress)` to
-   *   // send them a link
-   * }
-   */
   async getUser(): Promise<any> {
     const authenticationState = await this.getAuthenticationState();
     if (authenticationState === AuthenticationState.AUTHENTICATED) {
@@ -125,10 +71,12 @@ export class WebController {
     return this.clientController.sendChallenge(emailAddress);
   }
 
-  async getStoreValue(): Promise<any> {
+  async getStoreValue(key: string): Promise<any> {
+    return this.clientController.getKeyValue(key);
   }
 
-  async setStoreValue(): Promise<any> {
+  async setStoreValue(key: string, value: string): Promise<any> {
+    return this.clientController.putKeyValue(key, value);
   }
 
   signOut(): void {
@@ -180,7 +128,7 @@ export class WebController {
   private getSessionCodeOrThrow(): any {
     const storedSessionCode = this.getSessionCode();
     if (storedSessionCode == null) {
-      throw new WebControllerException(
+      throw new WebException(
         ErrorCode.NO_STORED_SESSION,
         ErrorMessage.NO_STORED_SESSION
       );

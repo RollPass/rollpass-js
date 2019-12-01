@@ -1,6 +1,6 @@
 import {
   defaultApiOptions
-} from "../src/defaults";
+} from "../src/config";
 
 test('has valid defaults', () => {
   expect(defaultApiOptions.baseURL).toBe("https://api.rollpass.io");

@@ -12,13 +12,9 @@
 
 * [AuthenticationState](enums/authenticationstate.md)
 
-### Browser Classes
-
-* [WebController](classes/webcontroller.md)
-
 ### Backend Classes
 
-* [SecretController](classes/secretcontroller.md)
+* [ProjectController](classes/projectcontroller.md)
 
 ### Isomorphic Classes
 
@@ -26,10 +22,12 @@
 
 ### Other Classes
 
-* [WebControllerException](classes/webcontrollerexception.md)
+* [WebController](classes/webcontroller.md)
+* [WebException](classes/webexception.md)
 
 ### Interfaces
 
 * [ApiOptions](interfaces/apioptions.md)
 * [ClientOptions](interfaces/clientoptions.md)
 * [IStorage](interfaces/istorage.md)
+* [User](interfaces/user.md)

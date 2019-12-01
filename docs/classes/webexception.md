@@ -1,33 +1,33 @@
-[rollpass-js](../README.md) › [WebControllerException](webcontrollerexception.md)
+[rollpass-js](../README.md) › [WebException](webexception.md)
 
-# Class: WebControllerException
+# Class: WebException
 
 ## Hierarchy
 
 * Error
 
-  ↳ **WebControllerException**
+  ↳ **WebException**
 
 ## Index
 
 ### Constructors
 
-* [constructor](webcontrollerexception.md#constructor)
+* [constructor](webexception.md#constructor)
 
 ### Properties
 
-* [message](webcontrollerexception.md#message)
-* [name](webcontrollerexception.md#name)
-* [stack](webcontrollerexception.md#optional-stack)
-* [Error](webcontrollerexception.md#static-error)
+* [message](webexception.md#message)
+* [name](webexception.md#name)
+* [stack](webexception.md#optional-stack)
+* [Error](webexception.md#static-error)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new WebControllerException**(`name`: [ErrorCode](../enums/errorcode.md), `message`: string): *[WebControllerException](webcontrollerexception.md)*
+\+ **new WebException**(`name`: [ErrorCode](../enums/errorcode.md), `message`: string): *[WebException](webexception.md)*
 
-Defined in src/public/WebController.ts:37
+Defined in src/public/WebController.ts:39
 
 **Parameters:**
 
@@ -36,7 +36,7 @@ Name | Type |
 `name` | [ErrorCode](../enums/errorcode.md) |
 `message` | string |
 
-**Returns:** *[WebControllerException](webcontrollerexception.md)*
+**Returns:** *[WebException](webexception.md)*
 
 ## Properties
 

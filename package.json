@@ -9,6 +9,7 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build:browser": "webpack",
     "docs": "npm run docs:typedoc && npm run docs:uml",
     "docs:typedoc": "rm -rf docs; typedoc --theme markdown --mode file --categoryOrder Browser --readme none --out docs --excludeProtected --excludePrivate ./src/public",
     "docs:uml": "mkdir -p docs/assets/uml; for f in uml/*.puml; do puml generate $f -o docs/assets/$f.png; done;",
@@ -49,9 +50,11 @@
     "jest-mock-axios": "^3.1.2",
     "node-plantuml": "^0.9.0",
     "ts-jest": "^24.2.0",
+    "ts-loader": "^6.2.1",
     "typedoc": "^0.15.3",
     "typedoc-plugin-markdown": "^2.2.11",
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3",
+    "webpack": "^4.41.2"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",

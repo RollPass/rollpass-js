@@ -1,5 +1,5 @@
 import axios, {AxiosInstance, Method} from "axios";
-import {defaultApiOptions} from "../defaults";
+import {defaultApiOptions} from "../config";
 
 export interface ApiOptions {
   baseURL: string;

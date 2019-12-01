@@ -20,7 +20,7 @@
 
 ▸ **getItem**(`key`: string): *any*
 
-Defined in src/public/WebController.ts:30
+Defined in src/public/WebController.ts:32
 
 **Parameters:**
 
@@ -36,7 +36,7 @@ ___
 
 ▸ **removeItem**(`key`: string): *void*
 
-Defined in src/public/WebController.ts:32
+Defined in src/public/WebController.ts:34
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **setItem**(`key`: string, `value`: any): *void*
 
-Defined in src/public/WebController.ts:34
+Defined in src/public/WebController.ts:36
 
 **Parameters:**
 
