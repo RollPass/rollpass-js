@@ -19,7 +19,7 @@
 
 • **clientToken**: *string*
 
-Defined in public/ClientController.ts:4
+Defined in src/public/ClientController.ts:4
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **projectId**: *string*
 
-Defined in public/ClientController.ts:5
+Defined in src/public/ClientController.ts:5

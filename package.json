@@ -18,12 +18,19 @@
       "<rootDir>/src",
       "<rootDir>/test"
     ],
+    "setupFiles": ["jest-localstorage-mock"],
     "testMatch": [
       "**/?(*.)+(spec|test).+(ts|tsx|js)"
     ],
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
-    }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.ts",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

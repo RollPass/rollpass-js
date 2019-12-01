@@ -18,6 +18,7 @@ ClientController
 
 ### Methods
 
+* [deleteSession](clientcontroller.md#deletesession)
 * [getSession](clientcontroller.md#getsession)
 * [getUser](clientcontroller.md#getuser)
 * [sendChallenge](clientcontroller.md#sendchallenge)
@@ -29,7 +30,7 @@ ClientController
 
 \+ **new ClientController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[ClientController](clientcontroller.md)*
 
-Defined in public/ClientController.ts:13
+Defined in src/public/ClientController.ts:13
 
 **Parameters:**
 
@@ -42,11 +43,27 @@ Name | Type |
 
 ## Methods
 
+###  deleteSession
+
+▸ **deleteSession**(`sessionCode`: string): *Promise‹any›*
+
+Defined in src/public/ClientController.ts:28
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`sessionCode` | string |
+
+**Returns:** *Promise‹any›*
+
+___
+
 ###  getSession
 
 ▸ **getSession**(`sessionCode`: string): *Promise‹any›*
 
-Defined in public/ClientController.ts:20
+Defined in src/public/ClientController.ts:20
 
 **Parameters:**
 
@@ -62,7 +79,7 @@ ___
 
 ▸ **getUser**(`sessionCode`: string): *Promise‹any›*
 
-Defined in public/ClientController.ts:44
+Defined in src/public/ClientController.ts:52
 
 **Parameters:**
 
@@ -78,7 +95,7 @@ ___
 
 ▸ **sendChallenge**(`emailAddress`: string): *Promise‹any›*
 
-Defined in public/ClientController.ts:28
+Defined in src/public/ClientController.ts:36
 
 **Parameters:**
 
@@ -94,7 +111,7 @@ ___
 
 ▸ **verifyChallenge**(`challengeCode`: string): *Promise‹any›*
 
-Defined in public/ClientController.ts:36
+Defined in src/public/ClientController.ts:44
 
 **Parameters:**
 

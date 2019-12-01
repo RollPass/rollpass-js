@@ -16,7 +16,7 @@
 
 • **AUTHENTICATED**: = "AUTHENTICATED"
 
-Defined in public/WebController.ts:11
+Defined in src/public/WebController.ts:11
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **SESSION_EXPIRED**: = "SESSION_EXPIRED"
 
-Defined in public/WebController.ts:10
+Defined in src/public/WebController.ts:10
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **UNAUTHENTICATED**: = "UNAUTHENTICATED"
 
-Defined in public/WebController.ts:9
+Defined in src/public/WebController.ts:9

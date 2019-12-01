@@ -25,6 +25,14 @@ export class ClientController extends ApiController {
     });
   }
 
+  async deleteSession(sessionCode: string): Promise<any> {
+    return this.request("DELETE", "/session", {
+      clientToken: this.clientOptions.clientToken,
+      projectId: this.clientOptions.projectId,
+      sessionCode
+    });
+  }
+
   async sendChallenge(emailAddress: string): Promise<any> {
     return this.request("POST", "/challenge/send", {
       clientToken: this.clientOptions.clientToken,

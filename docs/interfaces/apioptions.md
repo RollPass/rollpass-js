@@ -20,7 +20,7 @@
 
 • **baseURL**: *string*
 
-Defined in protected/ApiController.ts:5
+Defined in src/protected/ApiController.ts:5
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **name**: *string*
 
-Defined in protected/ApiController.ts:7
+Defined in src/protected/ApiController.ts:7
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **timeout**: *number*
 
-Defined in protected/ApiController.ts:6
+Defined in src/protected/ApiController.ts:6

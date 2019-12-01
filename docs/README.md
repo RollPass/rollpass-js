@@ -4,6 +4,10 @@
 
 ## Index
 
+### Other Enumerations
+
+* [ErrorCode](enums/errorcode.md)
+
 ### State Enumerations
 
 * [AuthenticationState](enums/authenticationstate.md)
@@ -19,6 +23,10 @@
 ### Isomorphic Classes
 
 * [ClientController](classes/clientcontroller.md)
+
+### Other Classes
+
+* [WebControllerException](classes/webcontrollerexception.md)
 
 ### Interfaces
 

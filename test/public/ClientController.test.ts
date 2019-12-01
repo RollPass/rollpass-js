@@ -29,6 +29,23 @@ test('can get session', async () => {
   })
 });
 
+test('can delete session', async () => {
+  const sessionCode = "testSessionCode";
+  const promise = instance.deleteSession(sessionCode);
+  mockAxios.mockResponse({data});
+  const result = await promise;
+  expect(result).toBe(data);
+  expect(mockAxios.request).toHaveBeenLastCalledWith({
+    method: "DELETE",
+    data: null,
+    url: "/session",
+    params: {
+      ...clientOptions,
+      sessionCode
+    }
+  })
+});
+
 test('can send challenge', async () => {
   const emailAddress = "testEmailAddress";
   const promise = instance.sendChallenge(emailAddress);
