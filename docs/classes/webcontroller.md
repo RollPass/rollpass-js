@@ -39,11 +39,13 @@ const webController = new WebController({
 ## Authenticate users
 The `WebController` makes it easy to authenticate users with one method: `getAuthenticationState()`. This method
 checks to see if a user is either:
+
 - anonymous
 - arriving via an access link
 - returning with a session that is valid or invalid
 
 Based on the returned state of `getAuthenticationState()` you should either:
+
 - `if(state === 'AUTHENTICATED')` prompt the user to login by asking for their email address and sending them a challenge
 - `else` called authenticated user methods such as `getUser()`
 
@@ -97,7 +99,7 @@ async created() {
 
 \+ **new WebController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `storage`: [IStorage](../interfaces/istorage.md), `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[WebController](webcontroller.md)*
 
-Defined in src/public/WebController.ts:123
+Defined in src/public/WebController.ts:125
 
 **Parameters:**
 
@@ -115,7 +117,7 @@ Name | Type | Default |
 
 ▸ **getAuthenticationState**(`currentUrl`: string): *Promise‹[AuthenticationState](../enums/authenticationstate.md)›*
 
-Defined in src/public/WebController.ts:146
+Defined in src/public/WebController.ts:148
 
 Get the current authentication state. Use the authentication state to determine your next action.
 
@@ -140,7 +142,7 @@ ___
 
 ▸ **getSessionCode**(): *any*
 
-Defined in src/public/WebController.ts:171
+Defined in src/public/WebController.ts:173
 
 **Returns:** *any*
 
@@ -150,7 +152,7 @@ ___
 
 ▸ **getStoreValue**(): *Promise‹any›*
 
-Defined in src/public/WebController.ts:224
+Defined in src/public/WebController.ts:226
 
 **Returns:** *Promise‹any›*
 
@@ -160,7 +162,7 @@ ___
 
 ▸ **getUser**(): *Promise‹any›*
 
-Defined in src/public/WebController.ts:219
+Defined in src/public/WebController.ts:221
 
 ```typescript
 try {
@@ -183,7 +185,7 @@ ___
 
 ▸ **sendChallenge**(`emailAddress`: string): *Promise‹any›*
 
-Defined in src/public/WebController.ts:201
+Defined in src/public/WebController.ts:203
 
 **Parameters:**
 
@@ -199,7 +201,7 @@ ___
 
 ▸ **setStoreValue**(): *Promise‹any›*
 
-Defined in src/public/WebController.ts:229
+Defined in src/public/WebController.ts:231
 
 **Returns:** *Promise‹any›*
 
@@ -209,6 +211,6 @@ ___
 
 ▸ **signOut**(): *void*
 
-Defined in src/public/WebController.ts:193
+Defined in src/public/WebController.ts:195
 
 **Returns:** *void*

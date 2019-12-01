@@ -82,11 +82,13 @@ class WebControllerException extends Error {
  * ## Authenticate users
  * The `WebController` makes it easy to authenticate users with one method: `getAuthenticationState()`. This method
  * checks to see if a user is either:
+ *
  * - anonymous
  * - arriving via an access link
  * - returning with a session that is valid or invalid
  *
  * Based on the returned state of `getAuthenticationState()` you should either:
+ *
  * - `if(state === 'AUTHENTICATED')` prompt the user to login by asking for their email address and sending them a challenge
  * - `else` called authenticated user methods such as `getUser()`
  *
