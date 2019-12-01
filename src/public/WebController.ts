@@ -45,6 +45,14 @@ class WebControllerException extends Error {
 /**
  * For use with client-side applications that interact with RollPass.
  *
+ * ## How it works
+ * The WebController is very simple. You don't need to know whether a user is logged in or not you simply assume a user if present and try to access them using `getUser()`. This method will throw when an authenticated session can not be found or a session has expired. This normal and handle the exception is part of the auth flow.
+ *
+ * ![Flow diagram](../assets/uml/webcontroller.puml.png)
+ *
+ * If `getUser()` succeeds you will be returned a user object and a session will be stored locally. If `getUser()` throws it is likely because a session has naturally expired or the current user is anonymous or visiting your page for the first time. In these cases simply prompt the user to enter their email address and then send them an access link using `webController.sendChallenge(emailAddress)`.
+ *
+ * Once an unathenticated or new user receives an email access link via `sendChallenge` they will click on it and load the `redirectUrl` you specified for this project. The same `getUser()` call will now succeed by extracting a challenge verification code from the redirect url. A session will be stored locally and is usually valid for 1 hour. You should still handle all `getUser` exceptions with a `try/catch` or `Promise.catch` as the session will eventually expire and you will need to send another challenge email. If a 1 hour session time is not long enough you can increase it in your [project settings dashboard](https://rollpass.io/dashboard).
  *
  * ## Install
  *
@@ -79,44 +87,6 @@ class WebControllerException extends Error {
  *   projectId: 'xxxx';
  * });
  * ```
- * ## Authenticate users
- * The `WebController` makes it easy to authenticate users with one method: `getAuthenticationState()`. This method
- * checks to see if a user is either:
- *
- * - anonymous
- * - arriving via an access link
- * - returning with a session that is valid or invalid
- *
- * Based on the returned state of `getAuthenticationState()` you should either:
- *
- * - `if(state === 'AUTHENTICATED')` prompt the user to login by asking for their email address and sending them a challenge
- * - `else` called authenticated user methods such as `getUser()`
- *
- * ### Promises
- * ```typescript
- * webController.getAuthenticationState().then(state => {
- *  if (state === 'AUTHENTICATED') {
- *       // call user related methods such as `getUser()`
- *   else {
- *       // prompt user to enter an email address and then send them an access link
- *       // via
- *   }
- * })
- * ```
- *
- *
- * ### Async await
- * ```typescript
- * async created() {
- *   const state = await webController.getAuthenticationState()
- *   if (state === 'AUTHENTICATED') {
- *       // call user related methods such as `getUser()`
- *   else {
- *       // prompt user to enter an email address and then send a challenge
- *   }
- * }
- * ```
- *
  * @category Browser
  */
 export class WebController {
@@ -134,18 +104,44 @@ export class WebController {
   }
 
   /**
-   * Get the current authentication state. Use the authentication state to determine your next action.
-   *
-   * Method first checks the current url for the presence of a challenge code. If that is found
-   * the challenge is verified and a session is created in localStorage. Authentication state returned in this case is `AUTHENTICATED`. You can then use the `getUser()` and user datastore methods safely.
-   *
-   * If no code is present the method checks for a session in localStorage and tries to validate the session. If the session is still valid then `AUTHENTICATED` is returned. If not `NO_STORED_SESSION` is returned.
-   *
-   * If no code or session is found `UNAUTHENTICATED` is returned. In this case (or when `NO_STORED_SESSION`) you should prompt the user to enter their email address and use it to send a challenge with `sendChallenge(emailAddress)`.
-   *
-   * @param currentUrl - Optional URL or string in which to find a `code={challengeCode}` parameter
+   * try {
+   *   const user = await webController.getUser()
+   * } catch (e) {
+   *   // prompt user to enter email address for access code
+   *   // then user `webController.sendChallenge(emailAddress)` to
+   *   // send them a link
+   * }
    */
-  async getAuthenticationState(currentUrl: string = window.location.search): Promise<AuthenticationState> {
+  async getUser(): Promise<any> {
+    const authenticationState = await this.getAuthenticationState();
+    if (authenticationState === AuthenticationState.AUTHENTICATED) {
+      return this.clientController.getUser(this.getSessionCodeOrThrow());
+    } else {
+      throw authenticationState
+    }
+  }
+
+  async sendChallenge(emailAddress: string): Promise<any> {
+    return this.clientController.sendChallenge(emailAddress);
+  }
+
+  async getStoreValue(): Promise<any> {
+  }
+
+  async setStoreValue(): Promise<any> {
+  }
+
+  signOut(): void {
+    const sessionCode = this.getSessionCode();
+    if (sessionCode) {
+      this.clientController.deleteSession(this.getSessionCode()).then(_ => {
+      });
+      this.storage.removeItem(this.sessionKey);
+    }
+  }
+
+
+  private async getAuthenticationState(currentUrl: string = window.location.search): Promise<AuthenticationState> {
 
     // try to obtain a challenge code from url if present
     const code = parseCodeFromUrl(currentUrl);
@@ -190,47 +186,6 @@ export class WebController {
       );
     }
     return storedSessionCode;
-  }
-
-  signOut(): void {
-    const sessionCode = this.getSessionCode();
-    if (sessionCode) {
-      this.clientController.deleteSession(this.getSessionCode()).then(_ => {});
-      this.storage.removeItem(this.sessionKey);
-    }
-  }
-
-  async sendChallenge(emailAddress: string): Promise<any> {
-    return this.clientController.sendChallenge(emailAddress);
-  }
-
-  /**
-   * ```typescript
-   * try {
-   *   const user = await getUser()
-   * } catch(e) {
-   *   if (e.name === 'NO_STORED_SESSION') {
-   *     // prompt user to log in
-   *   } else {
-   *     throw e;
-   *   }
-   * }
-   *
-   * ```
-   */
-  async getUser(): Promise<any> {
-    const storedSessionCode = this.getSessionCodeOrThrow();
-    return this.clientController.getUser(storedSessionCode);
-  }
-
-  async getStoreValue(): Promise<any> {
-    const storedSessionCode = this.getSessionCodeOrThrow();
-    return this.clientController.getUser(storedSessionCode);
-  }
-
-  async setStoreValue(): Promise<any> {
-    const storedSessionCode = this.getSessionCodeOrThrow();
-    return this.clientController.getUser(storedSessionCode);
   }
 }
 

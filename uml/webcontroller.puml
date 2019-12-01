@@ -1,0 +1,19 @@
+@startuml
+(*) --> "Page loads"
+    --> [Instantiate WebController] "const WebController = new WebController({ ... })"
+    --> "try { webController.getUser() }"
+
+if "" then
+  -left->[Returns User] "Use user in application"
+  --> "Get and set user data"
+  --> (*)
+else
+  -right->[Throws exception] "Catch exception"
+  --> "Prompt user for email address"
+  --> "webController.sendChallenge(emailAddress)"
+  --> [Access link emailed to user] "User opens email and clicks link"
+  -up-> "Page loads"
+endif
+
+@enduml
+

@@ -4,6 +4,15 @@
 
 For use with client-side applications that interact with RollPass.
 
+## How it works
+The WebController is very simple. You don't need to know whether a user is logged in or not you simply assume a user if present and try to access them using `getUser()`. This method will throw when an authenticated session can not be found or a session has expired. This normal and handle the exception is part of the auth flow.
+
+![Flow diagram](../assets/uml/webcontroller.puml.png)
+
+If `getUser()` succeeds you will be returned a user object and a session will be stored locally. If `getUser()` throws it is likely because a session has naturally expired or the current user is anonymous or visiting your page for the first time. In these cases simply prompt the user to enter their email address and then send them an access link using `webController.sendChallenge(emailAddress)`.
+
+Once an unathenticated or new user receives an email access link via `sendChallenge` they will click on it and load the `redirectUrl` you specified for this project. The same `getUser()` call will now succeed by extracting a challenge verification code from the redirect url. A session will be stored locally and is usually valid for 1 hour. You should still handle all `getUser` exceptions with a `try/catch` or `Promise.catch` as the session will eventually expire and you will need to send another challenge email. If a 1 hour session time is not long enough you can increase it in your [project settings dashboard](https://rollpass.io/dashboard).
+
 ## Install
 
 To use RollPass create a new WebController instance in your application using the [clientToken](https://rollpass.io/dashboard) and [projectId](https://rollpass.io/dashboard) found in your [dashboard](https://rollpass.io/dashboard).
@@ -36,42 +45,6 @@ const webController = new WebController({
   projectId: 'xxxx';
 });
 ```
-## Authenticate users
-The `WebController` makes it easy to authenticate users with one method: `getAuthenticationState()`. This method
-checks to see if a user is either:
-
-- anonymous
-- arriving via an access link
-- returning with a session that is valid or invalid
-
-Based on the returned state of `getAuthenticationState()` you should either:
-
-- `if(state === 'AUTHENTICATED')` prompt the user to login by asking for their email address and sending them a challenge
-- `else` called authenticated user methods such as `getUser()`
-
-### Promises
-```typescript
-webController.getAuthenticationState().then(state => {
- if (state === 'AUTHENTICATED') {
-      // call user related methods such as `getUser()`
-  else {
-      // prompt user to enter an email address and then send them an access link
-      // via
-  }
-})
-```
-
-### Async await
-```typescript
-async created() {
-  const state = await webController.getAuthenticationState()
-  if (state === 'AUTHENTICATED') {
-      // call user related methods such as `getUser()`
-  else {
-      // prompt user to enter an email address and then send a challenge
-  }
-}
-```
 
 ## Hierarchy
 
@@ -85,7 +58,6 @@ async created() {
 
 ### Methods
 
-* [getAuthenticationState](webcontroller.md#getauthenticationstate)
 * [getSessionCode](webcontroller.md#getsessioncode)
 * [getStoreValue](webcontroller.md#getstorevalue)
 * [getUser](webcontroller.md#getuser)
@@ -99,7 +71,7 @@ async created() {
 
 \+ **new WebController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `storage`: [IStorage](../interfaces/istorage.md), `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[WebController](webcontroller.md)*
 
-Defined in src/public/WebController.ts:125
+Defined in src/public/WebController.ts:95
 
 **Parameters:**
 
@@ -113,36 +85,11 @@ Name | Type | Default |
 
 ## Methods
 
-###  getAuthenticationState
-
-▸ **getAuthenticationState**(`currentUrl`: string): *Promise‹[AuthenticationState](../enums/authenticationstate.md)›*
-
-Defined in src/public/WebController.ts:148
-
-Get the current authentication state. Use the authentication state to determine your next action.
-
-Method first checks the current url for the presence of a challenge code. If that is found
-the challenge is verified and a session is created in localStorage. Authentication state returned in this case is `AUTHENTICATED`. You can then use the `getUser()` and user datastore methods safely.
-
-If no code is present the method checks for a session in localStorage and tries to validate the session. If the session is still valid then `AUTHENTICATED` is returned. If not `NO_STORED_SESSION` is returned.
-
-If no code or session is found `UNAUTHENTICATED` is returned. In this case (or when `NO_STORED_SESSION`) you should prompt the user to enter their email address and use it to send a challenge with `sendChallenge(emailAddress)`.
-
-**Parameters:**
-
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`currentUrl` | string |  window.location.search | Optional URL or string in which to find a `code={challengeCode}` parameter  |
-
-**Returns:** *Promise‹[AuthenticationState](../enums/authenticationstate.md)›*
-
-___
-
 ###  getSessionCode
 
 ▸ **getSessionCode**(): *any*
 
-Defined in src/public/WebController.ts:173
+Defined in src/public/WebController.ts:169
 
 **Returns:** *any*
 
@@ -152,7 +99,7 @@ ___
 
 ▸ **getStoreValue**(): *Promise‹any›*
 
-Defined in src/public/WebController.ts:226
+Defined in src/public/WebController.ts:128
 
 **Returns:** *Promise‹any›*
 
@@ -162,20 +109,15 @@ ___
 
 ▸ **getUser**(): *Promise‹any›*
 
-Defined in src/public/WebController.ts:221
+Defined in src/public/WebController.ts:115
 
-```typescript
 try {
-  const user = await getUser()
-} catch(e) {
-  if (e.name === 'NO_STORED_SESSION') {
-    // prompt user to log in
-  } else {
-    throw e;
-  }
+  const user = await webController.getUser()
+} catch (e) {
+  // prompt user to enter email address for access code
+  // then user `webController.sendChallenge(emailAddress)` to
+  // send them a link
 }
-
-```
 
 **Returns:** *Promise‹any›*
 
@@ -185,7 +127,7 @@ ___
 
 ▸ **sendChallenge**(`emailAddress`: string): *Promise‹any›*
 
-Defined in src/public/WebController.ts:203
+Defined in src/public/WebController.ts:124
 
 **Parameters:**
 
@@ -201,7 +143,7 @@ ___
 
 ▸ **setStoreValue**(): *Promise‹any›*
 
-Defined in src/public/WebController.ts:231
+Defined in src/public/WebController.ts:131
 
 **Returns:** *Promise‹any›*
 
@@ -211,6 +153,6 @@ ___
 
 ▸ **signOut**(): *void*
 
-Defined in src/public/WebController.ts:195
+Defined in src/public/WebController.ts:134
 
 **Returns:** *void*
