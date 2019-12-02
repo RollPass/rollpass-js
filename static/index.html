@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RollPass Browser</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+</head>
+<body>
+<section class="hero is-medium intro">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">RollPass Browser</h1>
+      <p class="subtitle">Browser script integration test.</p>
+      <form action="" class="form" id="form">
+        <!--state-->
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">State</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input class="input" type="text" name="state" id="state" value="preload" readonly disabled>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--state-->
+        <div class="field is-horizontal ">
+          <div class="field-label is-normal">
+            <label class="label">Action</label>
+          </div>
+          <div class="field-body">
+            <div class="field has-addons">
+              <p class="control is-expanded">
+                <input class="input" type="email" id="email" name="email">
+              </p>
+              <p class="control">
+                <button type="submit" class="button is-primary" id="submit">Send Link</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="rollpass.min.js"></script>
+<script>
+  const state = document.getElementById("state");
+
+  window.RollPass.init({
+    clientToken: "client_d07a47d758bce000833c644e90c528d61e241051ca1bfba5b393c15a88f6732d4e1828db926c881c6d45dae95918f6d2128e50fdc009cd630655b1f0860214b205337e19de4b69b9a2ee3c1b62a95b0b3a819c472287f1a4a2ee63c5606a4ba0fdf9a3f2e3f5e24d9fe64df579ccda5de198e616af1cd873e9e91ee145d17c6947a4c6ea7fbf99fb6cbec94dc21dbc70a20d37803c891f37ca8a8dc7793284d5e3c6431a9d09f93118e64817d36c15f818526a3423f8211bf55f0647522b05707ca4bcd41741fec9e336013b50dc92a119bd10053c25fdd4fa76c32a9d3cb54e031ae8466497b7cd6456baed91c0fdf11bcddb9d0a8a96a613d832ce63b396af",
+    projectId: "cb6f4f52-88e0-4dd7-89ea-509261d6b334",
+  });
+
+  window.RollPass.getUser().then(function (user) {
+    state.value = "AUTHENTICATED";
+  }).catch(err => {
+    state.value = err;
+  });
+
+  document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    if (email) {
+      window.RollPass.sendAccessLink(email);
+      state.value = "LINK_SENT"
+    } else {
+      state.value = "ERROR";
+    }
+  }, false);
+
+</script>
+</body>
+</html>
