@@ -11,7 +11,8 @@ Official [RollPass.io](https://rollpass.io) Javascript library for frontend, bac
 ## Getting started
 
 ### Browser Installation
-For frontend and static HTML projects use include the RollPass CDN script in your HTML and use `getUser` to authenticate.
+RollPass let's you create authenticated frontend apps without a database or server!
+Simply include the RollPass CDN script in your HTML and use `getUser` to authenticate.
 
 ```html
 <script src="https://cdn.rollpass.io/js/rollpass.min.js"></script>
@@ -33,11 +34,12 @@ RollPass.getUser().then(function (user) {
 ```
 
 ### NodeJS Environments
-Install RollPass with npm or yarn.
+RollPass works well with NodeJS, Typescript, and WebPack. Install the package with npm or yarn.
 
 `npm install --save rollpass`
 
-You have access to all RollPass API features from this package. Configure the Controllers you wish to use in your application. See the documentaion for extensive notes and examples.
+The library exports several Controller classes that correspond to RollPass REST API actions. 
+Configure the Controllers you wish to use in your application. See the documentation for extensive notes and examples.
 
 ```typescript
 import { ClientController } from "rollpass";
