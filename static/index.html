@@ -62,6 +62,7 @@
     projectId: "cb6f4f52-88e0-4dd7-89ea-509261d6b334",
   });
 
+  state.value = "GETTING_USER";
   window.RollPass.getUser().then(function (user) {
     state.value = "AUTHENTICATED";
   }).catch(err => {

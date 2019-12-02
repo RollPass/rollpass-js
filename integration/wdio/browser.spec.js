@@ -27,7 +27,6 @@ describe('static browser test', () => {
     const [_, code] = /\?code&#x3D;([^'"]+)/g.exec(body)
     assert.strictEqual(!!code, true);
     await browser.url("/index.html?code=" + code);
-    await browser.pause(120000);
     await browser.waitUntil(() => stateEquals('AUTHENTICATED'));
   });
 
