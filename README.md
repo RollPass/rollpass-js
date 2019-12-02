@@ -86,7 +86,7 @@ You can see how we test this library using MailSlurp in [browser.spec.js](./inte
 ## Issues
 
 - Please email [contact@rollpass.io](mailto:contact@rollpass.io)
-- or open an issue and tag @jackmahoney
+- Or open a GitHub issue and include code samples
 
 ## Examples
 
