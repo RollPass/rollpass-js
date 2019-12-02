@@ -12,10 +12,8 @@ Official [RollPass.io](https://rollpass.io) Javascript library for frontend, bac
 - **Free for personal use**
 
 ## Quick Start
-
-### Create an account
 RollPass is free for personal use. First, [create an account](https://rollpass.io/sign-up). Then find your 
-`clientToken` and `projectId` in the RollPass [dashboard](https://rollpass.io/dashboard).
+`clientToken` and `projectId` in the RollPass [dashboard](https://rollpass.io/dashboard). Next, choose how you want to use RollPass:
 
 ### Browser Installation
 RollPass let's you create authenticated frontend apps without a database or server!
@@ -71,6 +69,13 @@ async created() {
   }
 }
 ```
+
+### REST API
+If you prefer to call the RollPass API directly see [REST API Endpoints](https://api.rollpass.io/docs)
+
+### Other Languages
+There are RollPass SDKs available in a range of [other languages](https://rollpass.io/install). You can also generate your own client
+using the RollPass [Swagger Spec](https://api.rollpass.io/spec).
 
 ## Documentation
 
