@@ -15,18 +15,33 @@ Official [RollPass.io](https://rollpass.io) Javascript library for frontend, bac
 RollPass is free for personal use. First, [create an account](https://rollpass.io/sign-up). Then find your 
 `clientToken` and `projectId` in the RollPass [dashboard](https://rollpass.io/dashboard). Next, choose how you want to use RollPass:
 
-### Browser Installation
-RollPass let's you create authenticated frontend apps without a database or server!
-Simply include the RollPass CDN script in your HTML and use `getUser` to authenticate.
+### Browser
+RollPass let's you create authenticated frontend apps without a database or server. All you need is an HTML file.
+
+#### Include script
+Add a script tag that includes RollPass on your page.
 
 ```html
 <script src="https://cdn.rollpass.io/js/rollpass.min.js"></script>
+```
+
+#### Configure RollPass
+Next configure RollPass using the clientToken and projectId shown in your [account dashboad](https://rollpass.io/dashboard).
+Make sure the `redirectUrl` of your project matches the localhost or location of your HTML file.
+
+```html
 <script>
 RollPass.init({
   clientToken: 'xxxx',
   projectId: 'xxxx'
 });
-  
+</script>
+```
+
+#### Authenticate User
+RollPass for the browser works wih one promise-based method. Call `getUser` when you app is loaded and RollPass will determine if a user is anonymous, logged in, or arriving via an access link. 
+
+```javascript
 RollPass.getUser().then(function (user) {
   // user is authenticated
   console.log(user);
@@ -36,8 +51,9 @@ RollPass.getUser().then(function (user) {
   RollPass.sendAccessLink(email);
   // tell user to check email
 });
-</script>
 ```
+
+If `getUser` throws an error this means the user could not be authenticated. In this case you must obtain the users email address and send an access link to them using `sendAccessLink`. When the user clicks the link and is redirected to your page let the same script execute and `getUser` will succeed and return the user to you. 
 
 ### NodeJS Environments
 RollPass works well with NodeJS, Typescript, and WebPack. Install the package with npm or yarn.
