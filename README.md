@@ -41,7 +41,8 @@ RollPass.init({
 #### Authenticate User
 RollPass for the browser works wih one promise-based method. Call `getUser` when you app is loaded and RollPass will determine if a user is anonymous, logged in, or arriving via an access link. 
 
-```javascript
+```html
+<script>
 RollPass.getUser().then(function (user) {
   // user is authenticated
   console.log(user);
@@ -51,6 +52,7 @@ RollPass.getUser().then(function (user) {
   RollPass.sendAccessLink(email);
   // tell user to check email
 });
+</script>
 ```
 
 If `getUser` throws an error this means the user could not be authenticated. In this case you must obtain the users email address and send an access link to them using `sendAccessLink`. When the user clicks the link and is redirected to your page let the same script execute and `getUser` will succeed and return the user to you. 
@@ -60,22 +62,44 @@ RollPass works well with NodeJS, Typescript, and WebPack. Install the package wi
 
 `npm install --save rollpass`
 
-The library exports several Controller classes that correspond to RollPass REST API actions. 
-Configure the Controllers you wish to use in your application. See the documentation  for extensive notes and examples.
+#### Import Controllers
+RollPass exposes several controllers that map closely to the REST API functionality. Controllers typically require either a clientToken or a secretToken.
 
-```typescript
+- ClientToken: for use in front-end or public environments
+- SecretToken: for use server-side in secure environments
+
+```tyescript
+// for frontend apps with localStorage
+import { WebController } from "rollpass";
+
+// for isomorphic or server proxy
 import { ClientController } from "rollpass";
 
-const clientController = new ClientController({
+// for server or secure only
+import { ProjectController } from "rollpass";
+
+```
+
+#### Configure
+First configure your controller instance with a clientToken or secretToken and a projectId. If your project uses a redirectUrl this should either point ot your application or proxy server. (You can create localhost and production projects.)
+
+```typescript
+
+const webController = new WebController({
   clientToken: 'xxxx',
   projectId: 'xxxx'
 });
+```
 
+#### Authenticate 
+When your app is ready *OR* when your user loads the redirectUrl for your project you can authenticate a user like so:
+
+```typescript
 async created() {
   try {
-    const user = await clientController.getUser();
+    const user = await webController.getUser();
   } catch (e) {
-    // no session, get user email address
+    // user is not authenticated so get user email address
     const email = prompt("Please enter email address");
 
     // send the user an access link
