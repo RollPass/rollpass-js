@@ -110,6 +110,11 @@ async created() {
 }
 ```
 
+## Redirect URL (CORS Policy)
+Most RollPass projects require a `redirectUrl`. This will be combined with a `?code={challengeCode}` parameter and sent to the a given email address each time you issue a challenge or accessLink. 
+
+You can use `getUser` to automatically parse and validate the challenge code in your application. For fine control you can also validate challenge codes yourself with the `ClientController`. For frontend applications it is important that your projects `allowedOrigin` matches the base URL of you application or your HTTP calls will fail.
+
 ## App Lifecycles
 TODO
 
