@@ -6,10 +6,11 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build": "npm run build:types && npm run build:js",
+    "build": "npm run build:clean && npm run build:types && npm run build:js && npm run build:browser",
+    "build:clean": "rimraf lib && rimraf static",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "build:browser": "webpack",
+    "build:browser": "npx webpack",
     "docs": "npm run docs:typedoc && npm run docs:uml",
     "docs:typedoc": "rm -rf docs; typedoc --theme markdown --mode file --categoryOrder Browser --readme none --out docs --excludeProtected --excludePrivate ./src/public",
     "docs:uml": "mkdir -p docs/assets/uml; for f in uml/*.puml; do puml generate $f -o docs/assets/$f.png; done;",
@@ -49,12 +50,14 @@
     "jest": "^24.9.0",
     "jest-mock-axios": "^3.1.2",
     "node-plantuml": "^0.9.0",
+    "rimraf": "^3.0.0",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
     "typedoc": "^0.15.3",
     "typedoc-plugin-markdown": "^2.2.11",
     "typescript": "^3.3.3",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",

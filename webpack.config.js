@@ -1,20 +1,22 @@
 const path = require('path');
 
 module.exports = {
-  // context: path.resolve(__dirname, 'src'),
-  devtool: 'inline-source-map',
-  entry: './src/browser.ts',
-  mode: 'development',
+  entry: './browser.ts',
+  mode: 'production',
   module: {
     rules: [{
       test: /\.tsx?$/,
-      use: 'ts-loader',
+      use: [{
+        options: {
+          configFile: path.resolve(__dirname, 'tsconfig.browser.json')
+        },
+        loader: 'ts-loader'
+      }],
       exclude: /node_modules/,
-      configFile: 'tsconfig.browser.json'
     }]
   },
   output: {
-    filename: 'rollpass.js',
+    filename: 'rollpass.min.js',
     path: path.resolve(__dirname, 'static')
   },
   resolve: {

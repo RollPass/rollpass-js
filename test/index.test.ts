@@ -1,7 +1,7 @@
 import {
   WebController,
   ClientController,
-} from "../src/node";
+} from "../src";
 
 test('exports all public controllers', () => {
   expect(WebController).not.toBeFalsy();

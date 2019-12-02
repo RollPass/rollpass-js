@@ -1,12 +1,27 @@
 {
+  "version": "2.0.2",
+  "files": ["./browser.ts"],
   "compilerOptions": {
+    "lib": [
+      "es5",
+      "es2015.promise",
+      "dom",
+      "es2015"
+    ],
     "target": "es5",
-    "module": "commonjs",
-    "lib": ["es5", "es6", "dom"],
-    "allowJs": true,
-    "jsx": "react",
-    "sourceMap": true,
-    "rootDir": "./client",
-    "downlevelIteration": true
-  }
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "outDir": "dist",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

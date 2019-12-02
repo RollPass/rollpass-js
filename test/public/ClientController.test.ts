@@ -1,5 +1,5 @@
 import mockAxios from 'jest-mock-axios';
-import {ClientController} from "../../src/node";
+import {ClientController} from "../../src";
 
 const clientOptions = {
   clientToken: 'testClientToken',

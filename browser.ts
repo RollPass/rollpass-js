@@ -1,5 +1,5 @@
-import {ClientOptions, User} from "./public/ClientController";
-import {ErrorCode, ErrorMessage, WebException, WebController} from "./public/WebController";
+import {ClientOptions, User} from "./src/public/ClientController";
+import {ErrorCode, ErrorMessage, WebException, WebController} from "./src/public/WebController";
 
 interface IRollPassBrowser {
     init(clientOptions: ClientOptions): void;
