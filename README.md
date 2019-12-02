@@ -70,12 +70,11 @@ async created() {
 }
 ```
 
-### REST API
-If you prefer to call the RollPass API directly see [REST API Endpoints](https://api.rollpass.io/docs)
+## App Lifecycles
+TODO
 
-### Other Languages
-There are RollPass SDKs available in a range of [other languages](https://rollpass.io/install). You can also generate your own client
-using the RollPass [Swagger Spec](https://api.rollpass.io/spec).
+## Key Value Store
+TODO
 
 ## Documentation
 
@@ -83,6 +82,10 @@ using the RollPass [Swagger Spec](https://api.rollpass.io/spec).
 - [WebController](./docs/classes/webcontroller.md)
 - [ClientController](./docs/classes/clientcontroller.md)
 - [ProjectController](./docs/classes/projectcontroller.md)
+
+## Examples
+
+- [Browser HelloWorld](./static/index.html)
 
 ## Testing
 RollPass recommends using a free MailSlurp [test email account](https://www.mailslurp.com) to test passwordless authentication flows.
@@ -93,6 +96,10 @@ You can see how we test this library using MailSlurp in [browser.spec.js](./inte
 - Please email [contact@rollpass.io](mailto:contact@rollpass.io)
 - Or open a GitHub issue and include code samples
 
-## Examples
+## REST API
+If you prefer to call the RollPass API directly see [REST API Endpoints](https://api.rollpass.io/docs)
 
-- [Browser HelloWorld](./static/index.html)
+## Other Languages
+There are RollPass SDKs available in a range of [other languages](https://rollpass.io/install). You can also generate your own client
+using the RollPass [Swagger Spec](https://api.rollpass.io/spec).
+
