@@ -1,7 +1,17 @@
 {
   "name": "rollpass",
-  "description": "Official Javascript library for RollPass.io",
+  "description": "Official Javascript SDK for RollPass.io passwordless authentication",
+  "author": "RollPass <contact@rollpass.io> (https://rollpass.io)",
   "version": "0.0.1",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rollpass/rollpass-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rollpass/rollpass-js/issues"
+  },
+  "homepage": "https://rollpass.io",
   "license": "MIT",
   "scripts": {
     "type-check": "tsc --noEmit",
@@ -37,6 +47,17 @@
       "<rootDir>/src/**/*.ts",
       "!**/node_modules/**",
       "!**/vendor/**"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/typescript"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-numeric-separator",
+      "@babel/proposal-class-properties",
+      "@babel/proposal-object-rest-spread"
     ]
   },
   "devDependencies": {
