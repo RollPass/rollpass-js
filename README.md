@@ -65,10 +65,10 @@ RollPass works well with NodeJS, Typescript, and WebPack. Install the package wi
 #### Import Controllers
 RollPass exposes several controllers that map closely to the REST API functionality. Controllers typically require either a clientToken or a secretToken.
 
-- ClientToken: for use in front-end or public environments
-- SecretToken: for use server-side in secure environments
+- `clientToken`: for use in front-end or public environments
+- `secretToken`: for use server-side in secure environments
 
-```tyescript
+```typescript
 // for frontend apps with localStorage
 import { WebController } from "rollpass";
 
