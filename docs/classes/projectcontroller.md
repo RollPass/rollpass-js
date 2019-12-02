@@ -1,4 +1,4 @@
-[rollpass-js](../README.md) › [ProjectController](projectcontroller.md)
+[rollpass](../README.md) › [ProjectController](projectcontroller.md)
 
 # Class: ProjectController
 

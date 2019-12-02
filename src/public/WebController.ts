@@ -2,9 +2,6 @@ import {ApiOptions} from "../protected/ApiController";
 import {ClientController, ClientOptions} from "./ClientController";
 import {parse} from "qs";
 
-/**
- * @category State
- */
 export enum AuthenticationState {
   UNAUTHENTICATED = "UNAUTHENTICATED",
   SESSION_EXPIRED = "SESSION_EXPIRED",
@@ -44,6 +41,9 @@ export class WebException extends Error {
   }
 }
 
+/**
+ * @category Browser
+ */
 export class WebController {
   private readonly sessionKey = "__rollpass_session_id__";
   private readonly storage: IStorage;

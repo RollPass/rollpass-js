@@ -1,4 +1,4 @@
-[rollpass-js](../README.md) › [WebException](webexception.md)
+[rollpass](../README.md) › [WebException](webexception.md)
 
 # Class: WebException
 
@@ -27,7 +27,7 @@
 
 \+ **new WebException**(`name`: [ErrorCode](../enums/errorcode.md), `message`: string): *[WebException](webexception.md)*
 
-Defined in src/public/WebController.ts:39
+*Defined in [src/public/WebController.ts:36](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L36)*
 
 **Parameters:**
 
@@ -65,6 +65,8 @@ ___
 • **stack**? : *undefined | string*
 
 *Inherited from void*
+
+*Overrides void*
 
 Defined in node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:975
 

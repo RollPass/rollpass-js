@@ -1,4 +1,4 @@
-[rollpass-js](../README.md) › [AuthenticationState](authenticationstate.md)
+[rollpass](../README.md) › [AuthenticationState](authenticationstate.md)
 
 # Enumeration: AuthenticationState
 
@@ -16,7 +16,7 @@
 
 • **AUTHENTICATED**: = "AUTHENTICATED"
 
-Defined in src/public/WebController.ts:11
+*Defined in [src/public/WebController.ts:8](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L8)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **SESSION_EXPIRED**: = "SESSION_EXPIRED"
 
-Defined in src/public/WebController.ts:10
+*Defined in [src/public/WebController.ts:7](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L7)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **UNAUTHENTICATED**: = "UNAUTHENTICATED"
 
-Defined in src/public/WebController.ts:9
+*Defined in [src/public/WebController.ts:6](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L6)*

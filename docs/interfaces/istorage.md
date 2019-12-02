@@ -1,4 +1,4 @@
-[rollpass-js](../README.md) › [IStorage](istorage.md)
+[rollpass](../README.md) › [IStorage](istorage.md)
 
 # Interface: IStorage
 
@@ -20,7 +20,7 @@
 
 ▸ **getItem**(`key`: string): *any*
 
-Defined in src/public/WebController.ts:32
+*Defined in [src/public/WebController.ts:29](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L29)*
 
 **Parameters:**
 
@@ -36,7 +36,7 @@ ___
 
 ▸ **removeItem**(`key`: string): *void*
 
-Defined in src/public/WebController.ts:34
+*Defined in [src/public/WebController.ts:31](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L31)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **setItem**(`key`: string, `value`: any): *void*
 
-Defined in src/public/WebController.ts:36
+*Defined in [src/public/WebController.ts:33](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L33)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[rollpass-js](../README.md) › [ApiOptions](apioptions.md)
+[rollpass](../README.md) › [ApiOptions](apioptions.md)
 
 # Interface: ApiOptions
 
@@ -20,7 +20,7 @@
 
 • **baseURL**: *string*
 
-Defined in src/protected/ApiController.ts:5
+*Defined in [src/protected/ApiController.ts:5](https://github.com/RollPass/rollpass-js/blob/7a52522/src/protected/ApiController.ts#L5)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **name**: *string*
 
-Defined in src/protected/ApiController.ts:7
+*Defined in [src/protected/ApiController.ts:7](https://github.com/RollPass/rollpass-js/blob/7a52522/src/protected/ApiController.ts#L7)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **timeout**: *number*
 
-Defined in src/protected/ApiController.ts:6
+*Defined in [src/protected/ApiController.ts:6](https://github.com/RollPass/rollpass-js/blob/7a52522/src/protected/ApiController.ts#L6)*

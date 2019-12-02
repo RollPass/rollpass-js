@@ -16,7 +16,7 @@ export interface User {
 
 /**
  * ClientController
- * @category Isomorphic
+ * @category Common
  */
 export class ClientController extends ApiController {
     private readonly clientOptions: ClientOptions;

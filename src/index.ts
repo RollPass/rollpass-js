@@ -1,6 +1,5 @@
 /**
- * Test
- * @remarks Export all controllers
+ * RollPass entry point
  */
 import {WebController} from "./public/WebController";
 import {ClientController} from "./public/ClientController";

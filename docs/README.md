@@ -1,28 +1,28 @@
-[rollpass-js](README.md)
+[rollpass](README.md)
 
-# rollpass-js
+# rollpass
 
 ## Index
 
-### Other Enumerations
-
-* [ErrorCode](enums/errorcode.md)
-
-### State Enumerations
+### Enumerations
 
 * [AuthenticationState](enums/authenticationstate.md)
+* [ErrorCode](enums/errorcode.md)
+
+### Browser Classes
+
+* [WebController](classes/webcontroller.md)
 
 ### Backend Classes
 
 * [ProjectController](classes/projectcontroller.md)
 
-### Isomorphic Classes
+### Common Classes
 
 * [ClientController](classes/clientcontroller.md)
 
 ### Other Classes
 
-* [WebController](classes/webcontroller.md)
 * [WebException](classes/webexception.md)
 
 ### Interfaces

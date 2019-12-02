@@ -1,3 +1,6 @@
+/**
+ * Imports and setup of global RollPass object for Browser environments
+ */
 import {ClientOptions, User} from "./src/public/ClientController";
 import {ErrorCode, ErrorMessage, WebException, WebController} from "./src/public/WebController";
 
