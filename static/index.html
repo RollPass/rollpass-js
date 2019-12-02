@@ -48,7 +48,11 @@
     </div>
   </div>
 </section>
-
+<!--
+  if no rollpass script in static folder
+  run `npm run static` use replace the src with the live cdn link
+  `https://cdn.rollpass.io/js/rollpass.min.js`
+-->
 <script src="rollpass.min.js"></script>
 <script>
   const state = document.getElementById("state");
@@ -74,7 +78,6 @@
       state.value = "ERROR";
     }
   }, false);
-
 </script>
 </body>
 </html>

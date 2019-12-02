@@ -2,13 +2,20 @@
 
 Official [RollPass.io](https://rollpass.io) Javascript library for frontend, backend, and more.
 
+> Faster sign-ups mean more conversions.
+
 ## Features
-- Passwordless authentication
+- Password-less authentication
 - User key-value data store
 - Browser CDN
 - Node and Typescript support
+- **Free for personal use**
 
-## Getting started
+## Quick Start
+
+### Create an account
+RollPass is free for personal use. First, [create an account](https://rollpass.io/sign-up). Then find your 
+`clientToken` and `projectId` in the RollPass [dashboard](https://rollpass.io/dashboard).
 
 ### Browser Installation
 RollPass let's you create authenticated frontend apps without a database or server!
@@ -29,6 +36,7 @@ RollPass.getUser().then(function (user) {
   // no current user session
   var email = prompt("Please enter email address");
   RollPass.sendAccessLink(email);
+  // tell user to check email
 });
 </script>
 ```
@@ -39,7 +47,7 @@ RollPass works well with NodeJS, Typescript, and WebPack. Install the package wi
 `npm install --save rollpass`
 
 The library exports several Controller classes that correspond to RollPass REST API actions. 
-Configure the Controllers you wish to use in your application. See the documentation for extensive notes and examples.
+Configure the Controllers you wish to use in your application. See the documentation  for extensive notes and examples.
 
 ```typescript
 import { ClientController } from "rollpass";
@@ -58,11 +66,28 @@ async created() {
 
     // send the user an access link
     clientController.sendChallenge(email);
-    
+
     // ask user to check email 
   }
 }
 ```
 
-### Documentation
-See [full method documentation](./docs/README.md)
+## Documentation
+
+- [Full method documentation](./docs/README.md)
+- [WebController](./docs/classes/webcontroller.md)
+- [ClientController](./docs/classes/clientcontroller.md)
+- [ProjectController](./docs/classes/projectcontroller.md)
+
+## Testing
+RollPass recommends using a free MailSlurp [test email account](https://www.mailslurp.com) to test passwordless authentication flows.
+You can see how we test this library using MailSlurp in [browser.spec.js](./integration/wdio/browser.spec.js).
+
+## Issues
+
+- Please email [contact@rollpass.io](mailto:contact@rollpass.io)
+- or open an issue and tag @jackmahoney
+
+## Examples
+
+- [Browser HelloWorld](./static/index.html)

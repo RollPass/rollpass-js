@@ -16,9 +16,7 @@
     "docs:uml": "mkdir -p docs/assets/uml; for f in uml/*.puml; do puml generate $f -o docs/assets/$f.png; done;",
     "test": "jest",
     "tdd": "jest --watch",
-    "integration": "wdio wdio.conf.js",
-    "integration:build": "",
-    "integration:wdio": "wdio wdio.conf.js"
+    "integration": "wdio wdio.conf.js"
   },
   "jest": {
     "roots": [

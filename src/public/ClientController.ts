@@ -72,7 +72,14 @@ export class ClientController extends ApiController {
         return this.request("PUT", "/key-value", {
             ...this.clientOptions,
             key
-        }, {value});
+        }, value);
+    }
+
+    async deleteKeyValue(key: string, value: any): Promise<any> {
+        return this.request("DELETE", "/key-value", {
+            ...this.clientOptions,
+            key
+        });
     }
 
 }

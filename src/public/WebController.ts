@@ -59,6 +59,7 @@ export class WebController {
   }
 
   async getUser(): Promise<any> {
+
     const authenticationState = await this.getAuthenticationState();
     if (authenticationState === AuthenticationState.AUTHENTICATED) {
       return this.clientController.getUser(this.getSessionCodeOrThrow());

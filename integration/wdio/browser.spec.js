@@ -22,11 +22,12 @@ describe('static browser test', () => {
     await $("#email").then(i => i.setValue(emailAddress));
     await $("#submit").then(a => a.click());
     await browser.waitUntil(() => stateEquals('LINK_SENT'));
-    browser.setTimeout(20000);
+    await browser.setTimeout({ script: 20000 });
     const {body} = await mailSlurp.waitForLatestEmail(id, 20000);
     const [_, code] = /\?code&#x3D;([^'"]+)/g.exec(body)
     assert.strictEqual(!!code, true);
     await browser.url("/index.html?code=" + code);
+    await browser.pause(120000);
     await browser.waitUntil(() => stateEquals('AUTHENTICATED'));
   });
 
