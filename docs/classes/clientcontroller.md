@@ -33,7 +33,7 @@ ClientController
 
 \+ **new ClientController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[ClientController](clientcontroller.md)*
 
-*Defined in [src/public/ClientController.ts:22](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L22)*
+*Defined in [src/public/ClientController.ts:22](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L22)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ Name | Type |
 
 ▸ **deleteKeyValue**(`key`: string, `value`: any): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:78](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L78)*
+*Defined in [src/public/ClientController.ts:78](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L78)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 ▸ **deleteSession**(`sessionCode`: string): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:36](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L36)*
+*Defined in [src/public/ClientController.ts:36](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L36)*
 
 **Parameters:**
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **getKeyValue**(`key`: string): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:64](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L64)*
+*Defined in [src/public/ClientController.ts:64](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L64)*
 
 **Parameters:**
 
@@ -99,7 +99,7 @@ ___
 
 ▸ **getSession**(`sessionCode`: string): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:29](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L29)*
+*Defined in [src/public/ClientController.ts:29](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L29)*
 
 **Parameters:**
 
@@ -115,7 +115,7 @@ ___
 
 ▸ **getUser**(`sessionCode`: string): *Promise‹[User](../interfaces/user.md)›*
 
-*Defined in [src/public/ClientController.ts:57](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L57)*
+*Defined in [src/public/ClientController.ts:57](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L57)*
 
 **Parameters:**
 
@@ -131,7 +131,7 @@ ___
 
 ▸ **putKeyValue**(`key`: string, `value`: any): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:71](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L71)*
+*Defined in [src/public/ClientController.ts:71](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L71)*
 
 **Parameters:**
 
@@ -148,7 +148,7 @@ ___
 
 ▸ **sendChallenge**(`emailAddress`: string): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:43](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L43)*
+*Defined in [src/public/ClientController.ts:43](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L43)*
 
 **Parameters:**
 
@@ -164,7 +164,7 @@ ___
 
 ▸ **verifyChallenge**(`challengeCode`: string): *Promise‹any›*
 
-*Defined in [src/public/ClientController.ts:50](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/ClientController.ts#L50)*
+*Defined in [src/public/ClientController.ts:50](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/ClientController.ts#L50)*
 
 **Parameters:**
 

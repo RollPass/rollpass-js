@@ -15,7 +15,7 @@
 
 • **NO_STORED_SESSION**: = "NO_STORED_SESSION"
 
-*Defined in [src/public/WebController.ts:17](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L17)*
+*Defined in [src/public/WebController.ts:17](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/WebController.ts#L17)*
 
 No session was found locally. This could mean that you haven't authenticated the user yet.
 You should call `getAuthenticationState` once at application load to get a local session before calling session dependent methods.
@@ -26,4 +26,4 @@ ___
 
 • **UNINITIALIZED_CLIENT**: = "UNINITIALIZED_CLIENT"
 
-*Defined in [src/public/WebController.ts:12](https://github.com/RollPass/rollpass-js/blob/7a52522/src/public/WebController.ts#L12)*
+*Defined in [src/public/WebController.ts:12](https://github.com/RollPass/rollpass-js/blob/f102b18/src/public/WebController.ts#L12)*
