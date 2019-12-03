@@ -6,26 +6,11 @@
 
 * **WebController**
 
-## Index
-
-### Constructors
-
-* [constructor](webcontroller.md#constructor)
-
-### Methods
-
-* [getSessionCode](webcontroller.md#getsessioncode)
-* [getStoreValue](webcontroller.md#getstorevalue)
-* [getUser](webcontroller.md#getuser)
-* [sendChallenge](webcontroller.md#sendchallenge)
-* [setStoreValue](webcontroller.md#setstorevalue)
-* [signOut](webcontroller.md#signout)
-
 ## Constructors
 
 ###  constructor
 
-\+ **new WebController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `storage`: [IStorage](../interfaces/istorage.md), `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[WebController](webcontroller.md)*
+\+ **new WebController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `storage`: IStorage, `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[WebController](webcontroller.md)*
 
 *Defined in [src/public/controllers/WebController.ts:50](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/WebController.ts#L50)*
 
@@ -34,7 +19,7 @@
 Name | Type | Default |
 ------ | ------ | ------ |
 `clientOptions` | [ClientOptions](../interfaces/clientoptions.md) | - |
-`storage` | [IStorage](../interfaces/istorage.md) |  window.localStorage |
+`storage` | IStorage |  window.localStorage |
 `apiOptions?` | Partial‹[ApiOptions](../interfaces/apioptions.md)› | - |
 
 **Returns:** *[WebController](webcontroller.md)*

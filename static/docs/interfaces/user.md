@@ -6,16 +6,6 @@
 
 * **User**
 
-## Index
-
-### Properties
-
-* [createdAt](user.md#createdat)
-* [emailAddress](user.md#emailaddress)
-* [id](user.md#id)
-* [updatedAt](user.md#updatedat)
-* [userHash](user.md#userhash)
-
 ## Properties
 
 ###  createdAt

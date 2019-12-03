@@ -6,13 +6,6 @@
 
 * **ClientOptions**
 
-## Index
-
-### Properties
-
-* [clientToken](clientoptions.md#clienttoken)
-* [projectId](clientoptions.md#projectid)
-
 ## Properties
 
 ###  clientToken

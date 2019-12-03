@@ -1,9 +1,17 @@
 /**
  * Imports and setup of global RollPass object for Browser environments
  */
-import {ClientOptions, User} from "./src/public/controllers/ClientController";
-import {ErrorCode, ErrorMessage, WebException, WebController} from "./src/public/controllers/WebController";
+import {ClientOptions, User} from "../src/public/controllers/ClientController";
+import {ErrorCode, ErrorMessage, WebException, WebController} from "../src/public/controllers/WebController";
 
+/**
+ * @ignore
+ */
+let webController: WebController;
+
+/**
+ * @ignore
+ */
 interface IRollPassBrowser {
     init(clientOptions: ClientOptions): void;
 
@@ -18,14 +26,38 @@ interface IRollPassBrowser {
     signOut(): void;
 }
 
+export { ClientOptions, User };
+
+/**
+ * @ignore
+ */
 function assertInitialized() {
     if (!webController) {
         throw new WebException(ErrorCode.UNINITIALIZED_CLIENT, ErrorMessage.UNINITIALIZED_CLIENT)
     }
 }
 
-let webController: WebController;
+/**
+ * RollPass Browser library for use in frontend apps or static HTML.
+ *
+ * ### Browser installation
+ * Include the RollPass Browser library in your HTML using a script tag.
+ *
+ * [[include:browser/install.md]]
+ *
+ * ### Configure RollPass
+ * Next configure the global RollPass object using your clientToken and projectId.
+ *
+ * [[include:browser/configure.md]]
+ *
+ * ### Now authenticate a user or ask them to login
+ * [[include:browser/authenticate.md]]
+ */
 export const RollPassBrowser: IRollPassBrowser = {
+    /**
+     *
+     * @param clientOptions
+     */
     init(clientOptions: ClientOptions) {
         webController = new WebController(clientOptions)
     },

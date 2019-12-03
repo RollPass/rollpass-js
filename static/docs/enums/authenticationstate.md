@@ -2,14 +2,6 @@
 
 # Enumeration: AuthenticationState
 
-## Index
-
-### Enumeration members
-
-* [AUTHENTICATED](authenticationstate.md#authenticated)
-* [SESSION_EXPIRED](authenticationstate.md#session_expired)
-* [UNAUTHENTICATED](authenticationstate.md#unauthenticated)
-
 ## Enumeration members
 
 ###  AUTHENTICATED

@@ -6,14 +6,6 @@
 
 * **ApiOptions**
 
-## Index
-
-### Properties
-
-* [baseURL](apioptions.md#baseurl)
-* [name](apioptions.md#name)
-* [timeout](apioptions.md#timeout)
-
 ## Properties
 
 ###  baseURL

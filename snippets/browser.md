@@ -12,7 +12,7 @@
       // user is authenticated
       alert("Hello " + user.emailAddress);
       // now we can get and set data for the user
-      // RollPass.getKeyValue("")            
+      //RollPass.getKeyValue("")            
     }).catch(err => {
       // no current user session
       const emailAddress = prompt("Please enter email address");

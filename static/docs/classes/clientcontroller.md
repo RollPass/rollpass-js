@@ -10,23 +10,6 @@ ClientController
 
   ↳ **ClientController**
 
-## Index
-
-### Constructors
-
-* [constructor](clientcontroller.md#constructor)
-
-### Methods
-
-* [deleteKeyValue](clientcontroller.md#deletekeyvalue)
-* [deleteSession](clientcontroller.md#deletesession)
-* [getKeyValue](clientcontroller.md#getkeyvalue)
-* [getSession](clientcontroller.md#getsession)
-* [getUser](clientcontroller.md#getuser)
-* [putKeyValue](clientcontroller.md#putkeyvalue)
-* [sendChallenge](clientcontroller.md#sendchallenge)
-* [verifyChallenge](clientcontroller.md#verifychallenge)
-
 ## Constructors
 
 ###  constructor

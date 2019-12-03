@@ -2,13 +2,6 @@
 
 # Enumeration: ErrorCode
 
-## Index
-
-### Enumeration members
-
-* [NO_STORED_SESSION](errorcode.md#no_stored_session)
-* [UNINITIALIZED_CLIENT](errorcode.md#uninitialized_client)
-
 ## Enumeration members
 
 ###  NO_STORED_SESSION

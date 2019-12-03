@@ -8,19 +8,6 @@
 
   ↳ **WebException**
 
-## Index
-
-### Constructors
-
-* [constructor](webexception.md#constructor)
-
-### Properties
-
-* [message](webexception.md#message)
-* [name](webexception.md#name)
-* [stack](webexception.md#optional-stack)
-* [Error](webexception.md#static-error)
-
 ## Constructors
 
 ###  constructor

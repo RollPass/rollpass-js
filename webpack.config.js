@@ -1,13 +1,13 @@
 const path = require('path');
 module.exports = {
-  entry: './browser.ts',
+  entry: './static/browser.ts',
   mode: 'production',
   module: {
     rules: [{
       test: /\.tsx?$/,
       use: [{
         options: {
-          configFile: path.resolve(__dirname, 'tsconfig.browser.json')
+          configFile: path.resolve(__dirname, '/static/tsconfig.browser.json')
         },
         loader: 'ts-loader'
       }],
@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: 'rollpass.min.js',
-    path: path.resolve(__dirname, 'static')
+    path: path.resolve(__dirname, '/static/dist/')
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js']
