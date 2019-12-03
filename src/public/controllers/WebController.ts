@@ -1,4 +1,4 @@
-import {ApiOptions} from "../protected/ApiController";
+import {ApiOptions} from "../../protected/ApiController";
 import {ClientController, ClientOptions} from "./ClientController";
 import {parse} from "qs";
 

@@ -1,4 +1,4 @@
-import {ApiController, ApiOptions} from "../protected/ApiController";
+import {ApiController, ApiOptions} from "../../protected/ApiController";
 
 export interface ClientOptions {
     clientToken: string;

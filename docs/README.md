@@ -15,6 +15,7 @@
 
 ### Backend Classes
 
+* [ExpressMiddleware](classes/expressmiddleware.md)
 * [ProjectController](classes/projectcontroller.md)
 
 ### Common Classes
@@ -30,4 +31,6 @@
 * [ApiOptions](interfaces/apioptions.md)
 * [ClientOptions](interfaces/clientoptions.md)
 * [IStorage](interfaces/istorage.md)
+* [MiddlewareOptions](interfaces/middlewareoptions.md)
+* [MiddlewarePaths](interfaces/middlewarepaths.md)
 * [User](interfaces/user.md)
