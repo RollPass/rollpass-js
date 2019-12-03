@@ -45,12 +45,12 @@ RollPass for the browser works wih one promise-based method. Call `getUser` when
 <script>
 RollPass.getUser().then(function (user) {
   // user is authenticated
-  console.log(user);
+  alert("Hello " + user.emailAddress);
 }).catch(err => {
   // no current user session
-  var email = prompt("Please enter email address");
-  RollPass.sendAccessLink(email);
-  // tell user to check email
+  const emailAddress = prompt("Please enter email address");
+  RollPass.sendAccessLink(emailAddress);
+  alert("Please check your email address")
 });
 </script>
 ```

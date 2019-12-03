@@ -2,7 +2,7 @@
   "name": "rollpass",
   "description": "Official Javascript SDK for RollPass.io passwordless authentication",
   "author": "RollPass <contact@rollpass.io> (https://rollpass.io)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "static": "rimraf static && npx webpack",
     "docs": "rimraf docs && npm run docs:typedoc && npm run docs:uml",
-    "docs:typedoc": "typedoc --theme markdown --mode file --categoryOrder Browser --readme none --out docs --excludeProtected --excludePrivate ./src/public",
+    "docs:typedoc": "typedoc --theme markdown --mode file --categoryOrder Browser --includes ./snippets --readme none --out docs --excludeProtected --excludePrivate ./src/public",
     "docs:uml": "mkdir -p docs/assets/uml; for f in uml/*.puml; do puml generate $f -o docs/assets/$f.png; done;",
     "test": "jest",
     "tdd": "jest --watch",
