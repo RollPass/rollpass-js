@@ -2,7 +2,7 @@
   "name": "rollpass",
   "description": "Official Javascript SDK for RollPass.io passwordless authentication",
   "author": "RollPass <contact@rollpass.io> (https://rollpass.io)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
     "docs:uml": "mkdir -p docs/assets/uml; for f in uml/*.puml; do puml generate $f -o docs/assets/$f.png; done;",
     "test": "jest",
     "tdd": "jest --watch",
-    "integration": "wdio wdio.conf.js"
+    "integration": "wdio wdio.conf.js",
+    "publish-minor": "npm version patch -m 'doc-bump' && git commit -am 'doc-bump' && npm publish"
   },
   "jest": {
     "roots": [
