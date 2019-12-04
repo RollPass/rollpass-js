@@ -22,7 +22,7 @@
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "static": "rimraf static/dist && npx webpack",
     "docs": "npm run docs:typedoc && npm run docs:static",
-    "docs:typedoc": "rimraf ./docs/rollpass-js typedoc --options typedoc.json ./src/public",
+    "docs:typedoc": "rimraf ./docs/rollpass-js && typedoc --options typedoc.json ./src/public",
     "docs:static": "rimraf ./docs/browser && typedoc --options typedoc.browser.json ./static",
     "uml": "mkdir -p docs/assets/uml; for f in uml/*.puml; do puml generate $f -o docs/assets/$f.png; done;",
     "test": "jest",
