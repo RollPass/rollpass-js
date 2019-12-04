@@ -21,7 +21,7 @@
 
 • **access**: *string*
 
-*Defined in [src/public/plugins/express-middleware.ts:29](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L29)*
+*Defined in [src/public/plugins/express-middleware.ts:29](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/src/public/plugins/express-middleware.ts#L29)*
 
 Path to which access email query parameter will be submitted
 
@@ -38,7 +38,7 @@ ___
 
 • **login**: *string*
 
-*Defined in [src/public/plugins/express-middleware.ts:18](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L18)*
+*Defined in [src/public/plugins/express-middleware.ts:18](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/src/public/plugins/express-middleware.ts#L18)*
 
 Path to which unauthenticated users will be redirect
 
@@ -58,7 +58,7 @@ ___
 
 • **redirect**: *string*
 
-*Defined in [src/public/plugins/express-middleware.ts:41](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L41)*
+*Defined in [src/public/plugins/express-middleware.ts:41](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/src/public/plugins/express-middleware.ts#L41)*
 
 Your project redirectUrl path. RollPass links will redirect users
 to this path with a `?code={challengeCode}` query.
@@ -76,7 +76,7 @@ ___
 
 • **signOut**: *string*
 
-*Defined in [src/public/plugins/express-middleware.ts:52](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L52)*
+*Defined in [src/public/plugins/express-middleware.ts:52](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/src/public/plugins/express-middleware.ts#L52)*
 
 Path that should trigger a sign out
 

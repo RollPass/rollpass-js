@@ -8,17 +8,24 @@
 
 ### ▪ **RollPassBrowser**: *object*
 
-*Defined in [static/browser.ts:67](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L67)*
+*Defined in [static/browser.ts:76](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L76)*
 
 RollPass Browser library for use in frontend apps or static HTML.
 
-### Quick Start
+## About
+RollPass lets you sign-up and login users without a server, database, or backend. Simply create a free RollPass account, include the Javascript CDN link on your page and call `RollPass.getUser()`.
 
-#### Create free account
+RollPass will handle user authentication, session management, and key-value storage. If a user is not logged in you will need to ask for their email address in Javascript and then send them an access email using `RollPass.sendAccessLink(emailAddress)`.
+
+Once a user clicks an access link they will be redirected to your project `redirectUrl` which should be the same URL as your HTML file. The same `RollPass.getUser()` will now verify and authenticate the user. Once `getUser` returns you have access to the users `emailAddress` and `id`. You can read and write data for the using using RollPass's simple data store.
+
+## Quick Start
+
+### Create free account
 [Sign up](https://rollpass.io/sign-up/) for RollPass and create a free account.
 Find your `clientToken` and `projectId` in [your dashboard](https://rollpass.io/dashboard).
 
-#### Add CDN Script
+### Add CDN Script
 Include the RollPass Browser library in your HTML by placing a `<script>` tag inside the `<body>`.
 
 ```html
@@ -30,7 +37,7 @@ Include the RollPass Browser library in your HTML by placing a `<script>` tag in
 </html>
 ```
 
-#### Configure RollPass
+### Configure RollPass
 Create another `<script>` tag after this and configure the global RollPass object using your `clientToken` and `projectId`.
 
 ```html
@@ -42,7 +49,7 @@ RollPass.init({
 </script>
 ```
 
-#### Authenticate a user
+### Authenticate a user
 
 Now user `RollPass.getUser()` to authenticate visitors to your page. `getUser` is an asynchronous function that returns a `Promise<User>` if the user is logged in. It throws an error if the session has expired or the user is not known.
 
@@ -83,11 +90,13 @@ RollPass.getUser()
 </script>
 ```
 
+## Methods
+
 ###  getKeyValue
 
 ▸ **getKeyValue**(`key`: string): *Promise‹any›*
 
-*Defined in [static/browser.ts:92](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L92)*
+*Defined in [static/browser.ts:101](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L101)*
 
 **Parameters:**
 
@@ -101,7 +110,7 @@ Name | Type |
 
 ▸ **getUser**(): *Promise‹[User](interfaces/user.md)›*
 
-*Defined in [static/browser.ts:84](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L84)*
+*Defined in [static/browser.ts:93](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L93)*
 
 Authenticate a user. Expect method to throw exception when user is not logged in. Handle this exception by asking for the users email address
 and sending them an access link via email using `RollPass.sendAccessLink(emailAddress)`.
@@ -147,7 +156,7 @@ RollPass.getUser()
 
 ▸ **init**(`clientOptions`: [ClientOptions](interfaces/clientoptions.md)): *void*
 
-*Defined in [static/browser.ts:75](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L75)*
+*Defined in [static/browser.ts:84](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L84)*
 
 Initialize RollPass for your `clientToken` and `projectId`. You can find these in [your dashboard](https://rollpass.io/dashboard).
 
@@ -174,7 +183,7 @@ Name | Type |
 
 ▸ **sendAccessLink**(`emailAddress`: string): *Promise‹any›*
 
-*Defined in [static/browser.ts:88](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L88)*
+*Defined in [static/browser.ts:97](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L97)*
 
 **Parameters:**
 
@@ -188,7 +197,7 @@ Name | Type |
 
 ▸ **setKeyValue**(`key`: string, `value`: any): *Promise‹any›*
 
-*Defined in [static/browser.ts:96](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L96)*
+*Defined in [static/browser.ts:105](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L105)*
 
 **Parameters:**
 
@@ -203,6 +212,6 @@ Name | Type |
 
 ▸ **signOut**(): *void*
 
-*Defined in [static/browser.ts:100](https://github.com/RollPass/rollpass-js/blob/7ab3f54/static/browser.ts#L100)*
+*Defined in [static/browser.ts:109](https://github.com/RollPass/rollpass-js/blob/0cb2eb5/static/browser.ts#L109)*
 
 **Returns:** *void*

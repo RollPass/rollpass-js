@@ -40,29 +40,38 @@ function assertInitialized() {
 /**
  * RollPass Browser library for use in frontend apps or static HTML.
  *
- * ### Quick Start
+ * ## About
+ * RollPass lets you sign-up and login users without a server, database, or backend. Simply create a free RollPass account, include the Javascript CDN link on your page and call `RollPass.getUser()`.
  *
- * #### Create free account
+ * RollPass will handle user authentication, session management, and key-value storage. If a user is not logged in you will need to ask for their email address in Javascript and then send them an access email using `RollPass.sendAccessLink(emailAddress)`.
+ *
+ * Once a user clicks an access link they will be redirected to your project `redirectUrl` which should be the same URL as your HTML file. The same `RollPass.getUser()` will now verify and authenticate the user. Once `getUser` returns you have access to the users `emailAddress` and `id`. You can read and write data for the using using RollPass's simple data store.
+ *
+ * ## Quick Start
+ *
+ * ### Create free account
  * [Sign up](https://rollpass.io/sign-up/) for RollPass and create a free account.
  * Find your `clientToken` and `projectId` in [your dashboard](https://rollpass.io/dashboard).
  *
- * #### Add CDN Script
+ * ### Add CDN Script
  * Include the RollPass Browser library in your HTML by placing a `<script>` tag inside the `<body>`.
  *
  * [[include:browser/install.md]]
  *
- * #### Configure RollPass
+ * ### Configure RollPass
  * Create another `<script>` tag after this and configure the global RollPass object using your `clientToken` and `projectId`.
  *
  * [[include:browser/configure.md]]
  *
- * #### Authenticate a user
+ * ### Authenticate a user
  *
  * Now user `RollPass.getUser()` to authenticate visitors to your page. `getUser` is an asynchronous function that returns a `Promise<User>` if the user is logged in. It throws an error if the session has expired or the user is not known.
  *
  * > **Note:** When an error is thrown you must ask the user to login. Obtain their email address and send them an access link using `RollPass.sendAccessLink(emailAddress)`.
  *
  * [[include:browser/authenticate.md]]
+ *
+ * ## Methods
  */
 export const RollPassBrowser: IRollPassBrowser = {
     /**
