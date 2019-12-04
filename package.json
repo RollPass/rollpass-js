@@ -2,7 +2,7 @@
   "name": "rollpass",
   "description": "Official Javascript SDK for RollPass.io passwordless authentication",
   "author": "RollPass <contact@rollpass.io> (https://rollpass.io)",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
