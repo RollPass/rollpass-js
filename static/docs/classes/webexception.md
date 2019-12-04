@@ -14,7 +14,7 @@
 
 \+ **new WebException**(`name`: [ErrorCode](../enums/errorcode.md), `message`: string): *[WebException](webexception.md)*
 
-*Defined in [src/public/controllers/WebController.ts:36](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/WebController.ts#L36)*
+*Defined in [src/public/controllers/WebController.ts:36](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/WebController.ts#L36)*
 
 **Parameters:**
 

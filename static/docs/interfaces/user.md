@@ -12,7 +12,7 @@
 
 • **createdAt**: *Date*
 
-*Defined in [src/public/controllers/ClientController.ts:12](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/ClientController.ts#L12)*
+*Defined in [src/public/controllers/ClientController.ts:12](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/ClientController.ts#L12)*
 
 ___
 
@@ -20,7 +20,7 @@ ___
 
 • **emailAddress**: *string*
 
-*Defined in [src/public/controllers/ClientController.ts:11](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/ClientController.ts#L11)*
+*Defined in [src/public/controllers/ClientController.ts:11](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/ClientController.ts#L11)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/public/controllers/ClientController.ts:9](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/ClientController.ts#L9)*
+*Defined in [src/public/controllers/ClientController.ts:9](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/ClientController.ts#L9)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **updatedAt**: *Date*
 
-*Defined in [src/public/controllers/ClientController.ts:13](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/ClientController.ts#L13)*
+*Defined in [src/public/controllers/ClientController.ts:13](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/ClientController.ts#L13)*
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 • **userHash**: *string*
 
-*Defined in [src/public/controllers/ClientController.ts:10](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/ClientController.ts#L10)*
+*Defined in [src/public/controllers/ClientController.ts:10](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/ClientController.ts#L10)*

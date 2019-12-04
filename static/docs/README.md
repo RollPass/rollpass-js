@@ -8,7 +8,7 @@
 
 ### ▪ **RollPassBrowser**: *object*
 
-*Defined in [static/browser.ts:56](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L56)*
+*Defined in [static/browser.ts:56](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L56)*
 
 RollPass Browser library for use in frontend apps or static HTML.
 
@@ -42,7 +42,7 @@ RollPass.init({
 
 ▸ **getKeyValue**(`key`: string): *Promise‹any›*
 
-*Defined in [static/browser.ts:72](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L72)*
+*Defined in [static/browser.ts:72](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L72)*
 
 **Parameters:**
 
@@ -56,7 +56,7 @@ Name | Type |
 
 ▸ **getUser**(): *Promise‹[User](interfaces/user.md)›*
 
-*Defined in [static/browser.ts:64](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L64)*
+*Defined in [static/browser.ts:64](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L64)*
 
 **Returns:** *Promise‹[User](interfaces/user.md)›*
 
@@ -64,7 +64,7 @@ Name | Type |
 
 ▸ **init**(`clientOptions`: [ClientOptions](interfaces/clientoptions.md)): *void*
 
-*Defined in [static/browser.ts:61](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L61)*
+*Defined in [static/browser.ts:61](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L61)*
 
 **Parameters:**
 
@@ -78,7 +78,7 @@ Name | Type | Description |
 
 ▸ **sendAccessLink**(`emailAddress`: string): *Promise‹any›*
 
-*Defined in [static/browser.ts:68](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L68)*
+*Defined in [static/browser.ts:68](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L68)*
 
 **Parameters:**
 
@@ -92,7 +92,7 @@ Name | Type |
 
 ▸ **setKeyValue**(`key`: string, `value`: any): *Promise‹any›*
 
-*Defined in [static/browser.ts:76](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L76)*
+*Defined in [static/browser.ts:76](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L76)*
 
 **Parameters:**
 
@@ -107,6 +107,6 @@ Name | Type |
 
 ▸ **signOut**(): *void*
 
-*Defined in [static/browser.ts:80](https://github.com/RollPass/rollpass-js/blob/b3041cd/static/browser.ts#L80)*
+*Defined in [static/browser.ts:80](https://github.com/RollPass/rollpass-js/blob/e91670a/static/browser.ts#L80)*
 
 **Returns:** *void*

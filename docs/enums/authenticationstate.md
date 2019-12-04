@@ -16,7 +16,7 @@
 
 • **AUTHENTICATED**: = "AUTHENTICATED"
 
-*Defined in [src/public/controllers/WebController.ts:8](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/WebController.ts#L8)*
+*Defined in [src/public/controllers/WebController.ts:8](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/WebController.ts#L8)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **SESSION_EXPIRED**: = "SESSION_EXPIRED"
 
-*Defined in [src/public/controllers/WebController.ts:7](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/WebController.ts#L7)*
+*Defined in [src/public/controllers/WebController.ts:7](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/WebController.ts#L7)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **UNAUTHENTICATED**: = "UNAUTHENTICATED"
 
-*Defined in [src/public/controllers/WebController.ts:6](https://github.com/RollPass/rollpass-js/blob/b3041cd/src/public/controllers/WebController.ts#L6)*
+*Defined in [src/public/controllers/WebController.ts:6](https://github.com/RollPass/rollpass-js/blob/e91670a/src/public/controllers/WebController.ts#L6)*
