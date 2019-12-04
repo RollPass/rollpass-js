@@ -1,0 +1,12 @@
+{
+ "name": "RollPass JS",  
+ "theme": "markdown", 
+ "mode": "file",
+ "categoryOrder": ["Browser"],
+ "includes": "./snippets",
+ "readme": "none",
+ "out": "docs/rollpass-js",
+ "excludeProtected": true,
+ "excludePrivate": true,
+ "tsconfig": "./tsconfig.json"
+}
