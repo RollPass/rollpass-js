@@ -28,7 +28,7 @@
     "test": "jest",
     "tdd": "jest --watch",
     "integration": "wdio wdio.conf.js",
-    "publish-minor": "npm version patch -m 'doc-bump' && git add . && git commit -am 'doc-bump' && npm publish"
+    "publish-minor": "npm version patch -m 'doc-bump' && npm publish"
   },
   "jest": {
     "roots": [
