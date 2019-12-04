@@ -20,7 +20,7 @@
 
 • **baseURL**: *string*
 
-*Defined in [src/protected/ApiController.ts:5](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/protected/ApiController.ts#L5)*
+*Defined in [src/protected/ApiController.ts:5](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/protected/ApiController.ts#L5)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/protected/ApiController.ts:7](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/protected/ApiController.ts#L7)*
+*Defined in [src/protected/ApiController.ts:7](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/protected/ApiController.ts#L7)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **timeout**: *number*
 
-*Defined in [src/protected/ApiController.ts:6](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/protected/ApiController.ts#L6)*
+*Defined in [src/protected/ApiController.ts:6](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/protected/ApiController.ts#L6)*

@@ -12,7 +12,7 @@
 
 • **clientToken**: *string*
 
-*Defined in [src/public/controllers/ClientController.ts:4](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/ClientController.ts#L4)*
+*Defined in [src/public/controllers/ClientController.ts:4](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/ClientController.ts#L4)*
 
 ___
 
@@ -20,4 +20,4 @@ ___
 
 • **projectId**: *string*
 
-*Defined in [src/public/controllers/ClientController.ts:5](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/ClientController.ts#L5)*
+*Defined in [src/public/controllers/ClientController.ts:5](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/ClientController.ts#L5)*

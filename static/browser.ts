@@ -40,27 +40,47 @@ function assertInitialized() {
 /**
  * RollPass Browser library for use in frontend apps or static HTML.
  *
- * ### Browser installation
- * Include the RollPass Browser library in your HTML using a script tag.
+ * ### Quick Start
+ *
+ * #### Create free account
+ * [Sign up](https://rollpass.io/sign-up/) for RollPass and create a free account.
+ * Find your `clientToken` and `projectId` in [your dashboard](https://rollpass.io/dashboard).
+ *
+ * #### Add CDN Script
+ * Include the RollPass Browser library in your HTML by placing a `<script>` tag inside the `<body>`.
  *
  * [[include:browser/install.md]]
  *
- * ### Configure RollPass
- * Next configure the global RollPass object using your clientToken and projectId.
+ * #### Configure RollPass
+ * Create another `<script>` tag after this and configure the global RollPass object using your `clientToken` and `projectId`.
  *
  * [[include:browser/configure.md]]
  *
- * ### Now authenticate a user or ask them to login
+ * #### Authenticate a user
+ *
+ * Now user `RollPass.getUser()` to authenticate visitors to your page. `getUser` is an asynchronous function that returns a `Promise<User>` if the user is logged in. It throws an error if the session has expired or the user is not known.
+ *
+ * > **Note:** When an error is thrown you must ask the user to login. Obtain their email address and send them an access link using `RollPass.sendAccessLink(emailAddress)`.
+ *
  * [[include:browser/authenticate.md]]
  */
 export const RollPassBrowser: IRollPassBrowser = {
     /**
+     * Initialize RollPass for your `clientToken` and `projectId`. You can find these in [your dashboard](https://rollpass.io/dashboard).
      *
-     * @param clientOptions
+     * > **Note:** Your project `redirectUrl` should be configured so that users will be redirected to your HTML page after clicking an access link.
+     *
+     * [[include:browser/configure.md]]
      */
     init(clientOptions: ClientOptions) {
         webController = new WebController(clientOptions)
     },
+    /**
+     * Authenticate a user. Expect method to throw exception when user is not logged in. Handle this exception by asking for the users email address
+     * and sending them an access link via email using `RollPass.sendAccessLink(emailAddress)`.
+     *
+     * [[include:browser/authenticate.md]]
+     */
     async getUser(): Promise<User> {
         assertInitialized();
         return webController.getUser()
@@ -82,7 +102,14 @@ export const RollPassBrowser: IRollPassBrowser = {
         webController.signOut();
     }
 };
-
+/**
+ * @ignore
+ */
 declare const RollPass: IRollPassBrowser;
+
+/**
+ * @ignore
+ */
 export default RollPassBrowser;
+
 (window as any).RollPass = RollPassBrowser;

@@ -12,7 +12,7 @@
 
 \+ **new WebController**(`clientOptions`: [ClientOptions](../interfaces/clientoptions.md), `storage`: [IStorage](../interfaces/istorage.md), `apiOptions?`: Partial‹[ApiOptions](../interfaces/apioptions.md)›): *[WebController](webcontroller.md)*
 
-*Defined in [src/public/controllers/WebController.ts:50](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L50)*
+*Defined in [src/public/controllers/WebController.ts:50](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L50)*
 
 **Parameters:**
 
@@ -30,7 +30,7 @@ Name | Type | Default |
 
 ▸ **getSessionCode**(): *any*
 
-*Defined in [src/public/controllers/WebController.ts:118](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L118)*
+*Defined in [src/public/controllers/WebController.ts:118](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L118)*
 
 **Returns:** *any*
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **getStoreValue**(`key`: string): *Promise‹any›*
 
-*Defined in [src/public/controllers/WebController.ts:75](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L75)*
+*Defined in [src/public/controllers/WebController.ts:75](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L75)*
 
 **Parameters:**
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **getUser**(): *Promise‹any›*
 
-*Defined in [src/public/controllers/WebController.ts:61](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L61)*
+*Defined in [src/public/controllers/WebController.ts:61](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L61)*
 
 **Returns:** *Promise‹any›*
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **sendChallenge**(`emailAddress`: string): *Promise‹any›*
 
-*Defined in [src/public/controllers/WebController.ts:71](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L71)*
+*Defined in [src/public/controllers/WebController.ts:71](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L71)*
 
 **Parameters:**
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **setStoreValue**(`key`: string, `value`: string): *Promise‹any›*
 
-*Defined in [src/public/controllers/WebController.ts:79](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L79)*
+*Defined in [src/public/controllers/WebController.ts:79](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L79)*
 
 **Parameters:**
 
@@ -99,6 +99,6 @@ ___
 
 ▸ **signOut**(): *void*
 
-*Defined in [src/public/controllers/WebController.ts:83](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/controllers/WebController.ts#L83)*
+*Defined in [src/public/controllers/WebController.ts:83](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/controllers/WebController.ts#L83)*
 
 **Returns:** *void*

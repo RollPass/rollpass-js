@@ -22,7 +22,7 @@
 
 • **authenticatedRoutes**? : *RegExp[]*
 
-*Defined in [src/public/plugins/express-middleware.ts:71](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/plugins/express-middleware.ts#L71)*
+*Defined in [src/public/plugins/express-middleware.ts:71](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L71)*
 
 Array of regular expressions for routes that require authentication
 
@@ -32,7 +32,7 @@ ___
 
 • **clientToken**: *string*
 
-*Defined in [src/public/plugins/express-middleware.ts:59](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/plugins/express-middleware.ts#L59)*
+*Defined in [src/public/plugins/express-middleware.ts:59](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L59)*
 
 Your clientToken
 
@@ -42,7 +42,7 @@ ___
 
 • **debug**? : *undefined | false | true*
 
-*Defined in [src/public/plugins/express-middleware.ts:75](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/plugins/express-middleware.ts#L75)*
+*Defined in [src/public/plugins/express-middleware.ts:75](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L75)*
 
 Enable console logging
 
@@ -52,7 +52,7 @@ ___
 
 • **paths**: *[MiddlewarePaths](middlewarepaths.md)*
 
-*Defined in [src/public/plugins/express-middleware.ts:67](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/plugins/express-middleware.ts#L67)*
+*Defined in [src/public/plugins/express-middleware.ts:67](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L67)*
 
 Path config
 
@@ -62,6 +62,6 @@ ___
 
 • **projectId**: *string*
 
-*Defined in [src/public/plugins/express-middleware.ts:63](https://github.com/RollPass/rollpass-js/blob/24d55ba/src/public/plugins/express-middleware.ts#L63)*
+*Defined in [src/public/plugins/express-middleware.ts:63](https://github.com/RollPass/rollpass-js/blob/7ab3f54/src/public/plugins/express-middleware.ts#L63)*
 
 RollPass projectId
